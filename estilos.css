@@ -16,7 +16,7 @@ body {
     background-color: white;
     margin: 0 auto;
     max-width: 1000px;
-    min-height: 94vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -122,6 +122,7 @@ footer p {
 
 @media (min-width:768px) {
     #contenedor {
+        min-height: 94vh;
         padding: 3vh 3vh;
     }
 
