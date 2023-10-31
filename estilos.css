@@ -150,4 +150,8 @@ footer p {
     aside {
         flex-grow: 0.2;
     }
+
+    footer {
+        margin: 2vh 0;
+    }
 }
