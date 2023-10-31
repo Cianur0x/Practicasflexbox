@@ -14,11 +14,19 @@ body {
 #contenedor {
     background-color: white;
     margin: 0 auto;
+    max-width: 1000px;
+    padding-bottom: 100%;
 }
 
 header {
     background-color: #03a9f4;
     color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+header h1 {
+    align-self: center;
 }
 
 nav ul {
@@ -65,3 +73,5 @@ aside {
 footer {
     background-color: #8e24aa;
 }
+
+@media (min-width:759px) {}
