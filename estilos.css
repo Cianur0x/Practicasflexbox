@@ -9,24 +9,28 @@ body {
     background: rgb(255, 94, 98);
     background: linear-gradient(90deg, rgba(255, 94, 98, 1) 0%, rgba(255, 153, 102, 1) 100%);
     background-size: 100% 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #contenedor {
     background-color: white;
     margin: 0 auto;
     max-width: 1000px;
-    padding-bottom: 100%;
+    min-height: 94vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
     background-color: #03a9f4;
-    color: white;
     display: flex;
     flex-direction: column;
 }
 
 header h1 {
     align-self: center;
+    color: white;
+    padding: 3vh 0;
 }
 
 nav ul {
@@ -44,34 +48,99 @@ nav ul li a {
     color: white;
 }
 
+main {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 3vh 0;
+}
 
 #servicios {
     display: flex;
     flex-direction: row;
+    margin-top: 3vh;
+}
 
+#servicio-1,
+#servicio-2,
+#servicio-3 {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 3vh 0;
+}
+
+#servicio-1 a,
+#servicio-2 a,
+#servicio-3 a {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
 }
 
 #servicio-1 {
     background-color: #e53935;
-    flex-grow: 1;
 }
 
 #servicio-2 {
     background-color: #8e24aa;
-    flex-grow: 1;
 }
 
 #servicio-3 {
     background-color: #3f51b5;
-    flex-grow: 1;
 }
 
 aside {
     background-color: #03a9f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+aside h2 {
+    align-self: center;
+    color: white;
+}
+
+aside ul {
+    padding: 2vh 5vh;
 }
 
 footer {
+    color: white;
     background-color: #8e24aa;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-@media (min-width:759px) {}
+footer p {
+    padding: 3vh 0;
+}
+
+@media (min-width:768px) {
+    #contenedor {
+        padding: 3vh 3vh;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    main {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    #servicios {
+        flex-grow: 0.8;
+        margin-top: 0;
+        margin-right: 3vh;
+    }
+
+    aside {
+        flex-grow: 0.2;
+    }
+}
