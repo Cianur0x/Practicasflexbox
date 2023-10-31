@@ -76,6 +76,7 @@ main {
     text-decoration: none;
     color: white;
     font-weight: bolder;
+    font-size: larger;
 }
 
 #servicio-1 {
@@ -100,6 +101,7 @@ aside {
 aside h2 {
     align-self: center;
     color: white;
+    padding-top: 15px;
 }
 
 aside ul {
@@ -127,6 +129,11 @@ footer p {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        padding: 0 3vh;
+    }
+
+    nav ul li {
+        padding: 5px 15px;
     }
 
     main {
