@@ -1,3 +1,10 @@
+/** añadir una clase para cada color 
+evitar porcentajes en padding margin, 
+se trabaja con valores fijos pixeles
+
+cuando queremos espacio en porcentaje es uso de basis
+y luego el resto que queda de espacio será con grow1**/
+
 * {
     margin: 0;
     padding: 0;
@@ -143,16 +150,19 @@ footer p {
     }
 
     #servicios {
-        flex-grow: 0.8;
+        /* flex-grow: 0.8; */
+        flex-basis: 60%;
         margin-top: 0;
         margin-right: 3vh;
     }
 
     aside {
-        flex-grow: 0.2;
+        flex-grow: 1;
     }
 
     footer {
         margin: 2vh 0;
+        flex-basis: calc(50% 16px/2);
+        /* pq son dos hijos*/
     }
 }
