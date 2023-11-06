@@ -4,6 +4,8 @@
     margin: 0;
 }
 
+/*** flex basis al h1 100% para que ocupe todo**/
+
 body {
     background-color: #dddada;
 }
@@ -68,7 +70,7 @@ button {
 
     section {
         margin: 0 16px 15px 16px;
-        flex-basis: 45%;
+        flex-basis: calc(50% - 20px);
     }
 
     h2 {
