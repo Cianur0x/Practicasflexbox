@@ -5,16 +5,25 @@
 
 }
 
-.contenedor {
-    min-width: 100px;
-}
-
 h1 {
     margin: 15px 0;
 }
 
 ul {
     list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.contenedor {
+    /* min-width: 100px; */
+    max-width: 1000px;
+}
+
+.column {
     display: flex;
     flex-direction: column;
     background-color: #4453b3;
@@ -35,4 +44,13 @@ li:hover {
 .oculto {
     /* visibility: hidden; */
     display: none;
+}
+
+.dropdown-menu {
+    text-align: left;
+}
+
+.dropdown-menu ul {
+    text-align: left;
+    background-color: crimson;
 }
