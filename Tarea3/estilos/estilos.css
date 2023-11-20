@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   border: 0;
+  text-decoration: none;
 }
 
 h1 {
@@ -12,9 +13,14 @@ ul {
   list-style: none;
 }
 
-a {
-  text-decoration: none;
+a,
+i {
+
   color: white;
+}
+
+.azul {
+  background-color: #4453b3;
 }
 
 .contenedor {
@@ -25,9 +31,7 @@ a {
 .column {
   display: flex;
   flex-direction: column;
-  background-color: #4453b3;
   text-align: center;
-  color: white;
 }
 
 li {
@@ -56,8 +60,24 @@ li:hover {
   padding: 15px 0 0 0;
 }
 
+/* 
+.dropdown-menu li {
+  position: relative;
+}
+
+.dropdown-menu ul {
+  display: none;
+  position: relative;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-menu li:hover ul {
+  display: block;
+} */
+
 .dropdown-menu ul li:hover {
-  background-color: coral;
+  background-color: #ff5e62;
 }
 
 /*** Menú redes sociales ***/
@@ -65,10 +85,22 @@ li:hover {
   display: flex;
   flex-direction: row;
   justify-content: right;
-  background-color: #4453b3;
 }
+
 .menu-rrss {
   width: 50%;
   display: flex;
   flex-direction: row;
+  text-align: center;
+}
+
+/*** dropdown-menu-rrss ***/
+.dropdown-menu-rrss {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.dropdown-menu-rrss ul:nth-child(1) {
+  flex-grow: 1;
 }
