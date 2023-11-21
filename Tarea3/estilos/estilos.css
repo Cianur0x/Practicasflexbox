@@ -48,7 +48,6 @@ li:hover {
 
 /** Menú con iconos **/
 .oculto {
-  /* visibility: hidden; */
   display: none;
 }
 
@@ -67,17 +66,14 @@ li:hover {
 }
 
 /*** Menú redes sociales ***/
-.footer-rrss {
+.menu-rrss {
   display: flex;
   flex-direction: row;
-  justify-content: right;
+  justify-content: flex-end;
 }
 
-.menu-rrss {
-  width: 50%;
-  display: flex;
-  flex-direction: row;
-  text-align: center;
+.menu-rrss li {
+  flex-grow: 0;
 }
 
 /*** dropdown-menu-rrss ***/
@@ -91,10 +87,10 @@ li:hover {
   flex-grow: 1;
 }
 
-/* qeu lo qeu se ponga aqui se aplica cuando tenga la anchura 768px como minimo
-min - si esta por debajo no entra
-max - que mas de ahi no entra
-
+/* 
+  que lo que se ponga aqui se aplica cuando tenga la anchura 768px como minimo
+  min - si esta por debajo no entra
+  max - que mas de ahi no entra
 */
 
 @media screen and (min-width:768px) {
@@ -129,7 +125,6 @@ max - que mas de ahi no entra
     flex-direction: row;
   }
 
-
   .dropdown-menu li {
     position: relative;
   }
@@ -153,10 +148,7 @@ max - que mas de ahi no entra
 
   .dropdown-menu-rrss ul:nth-child(1) {
     flex-grow: 0;
-    flex-basis: 30%;
+    flex-basis: 50%;
   }
 
-  .dropdown-menu-rrss ul:nth-child(2) {
-    flex-basis: 30%;
-  }
 }
