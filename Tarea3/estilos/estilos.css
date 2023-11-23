@@ -140,11 +140,11 @@ li:hover {
     flex-wrap: nowrap;
   }
 
-  .row {
+  .column {
     flex-direction: row;
   }
 
-  .row li {
+  .column li {
     flex-grow: 1;
   }
 
