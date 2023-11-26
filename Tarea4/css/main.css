@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: white;
+}
+
+header {
+  margin: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+header .carrito {
+  display: none;
+}
+
+.banner {
+  background-image: url(../img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  color: white;
+}
+.banner article {
+  margin: 16px;
+}
+.banner article .buscador {
+  color: #a5aead;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  justify-content: space-between;
+}
+
+.menu {
+  background: #842551;
+  background: linear-gradient(90deg, #842551 0%, #e14d51 100%);
+  display: flex;
+  flex-direction: column;
+}
+.menu article {
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+}
+.menu article img {
+  align-self: flex-start;
+  width: 80px;
+}
+.menu article p {
+  flex-grow: 1;
+  text-align: center;
+}/*# sourceMappingURL=main.css.map */
