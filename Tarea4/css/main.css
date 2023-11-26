@@ -12,7 +12,6 @@ body {
 .contenedor {
   margin: 0 auto;
   max-width: 1100px;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -76,16 +75,34 @@ main {
   background-color: crimson;
 }
 main h1 {
-  flex-grow: 1;
+  padding: 15px;
+  flex-basis: 100%;
 }
 main article {
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc(50% - 34px);
   border: 1px #a5aead solid;
   background-color: bisque;
   margin: 16px;
 }
-main article img {
-  width: 100%;
-}
 main article h3 {
   color: #a5aead;
+}
+main article button {
+  flex-grow: 1;
+  background-color: #32c3ef;
+}
+
+footer {
+  padding: 16px;
+  background-color: #151515;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: left;
+}
+footer ul {
+  list-style: none;
 }/*# sourceMappingURL=main.css.map */
