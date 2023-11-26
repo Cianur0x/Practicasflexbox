@@ -1,0 +1,25 @@
+@import 'variables';
+
+@mixin for-lil-phone {
+  @media (max-width: #{$telefono}) {
+    @content;
+  }
+}
+
+@mixin for-normal-phone {
+  @media (min-width: #{$telefono}) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media (min-width:#{$tablet}) {
+    @content;
+  }
+}
+
+@mixin for-desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
