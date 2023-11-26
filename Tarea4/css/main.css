@@ -9,6 +9,16 @@ body {
   background-color: white;
 }
 
+.contenedor {
+  margin: 0 auto;
+  max-width: 1100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
 header {
   margin: 16px;
   display: flex;
@@ -57,4 +67,25 @@ header .carrito {
 .menu article p {
   flex-grow: 1;
   text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: crimson;
+}
+main h1 {
+  flex-grow: 1;
+}
+main article {
+  border: 1px #a5aead solid;
+  background-color: bisque;
+  margin: 16px;
+}
+main article img {
+  width: 100%;
+}
+main article h3 {
+  color: #a5aead;
 }/*# sourceMappingURL=main.css.map */
