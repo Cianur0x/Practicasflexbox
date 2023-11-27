@@ -14,7 +14,7 @@ body {
 }
 
 header {
-  margin: 16px;
+  margin: 25px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -25,13 +25,19 @@ header .carrito {
 
 .banner {
   background-image: url(../img/hero.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 400px;
+  height: 500px;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .banner article {
-  margin: 16px;
+  margin: 0 30px;
+}
+.banner article h1 {
+  font-size: 4rem;
+  font-weight: 100;
+  margin: 50px;
 }
 .banner article .buscador {
   color: #a5aead;
@@ -39,6 +45,8 @@ header .carrito {
   flex-direction: row;
   background-color: white;
   justify-content: space-between;
+  align-items: center;
+  height: 35px;
 }
 
 .menu {
@@ -48,7 +56,7 @@ header .carrito {
   flex-direction: column;
 }
 .menu article {
-  padding: 16px;
+  padding: 25px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -61,6 +69,7 @@ header .carrito {
 .menu article p {
   flex-grow: 1;
   text-align: center;
+  background-color: crimson;
 }
 
 main {
@@ -77,22 +86,22 @@ main h1 {
 main article {
   display: flex;
   flex-direction: column;
-  flex-basis: calc(50% - 34px);
+  flex-basis: calc(50% - 52px);
   border: 1px #a5aead solid;
   background-color: bisque;
-  margin: 16px;
+  margin: 25px;
 }
 main article h3 {
   color: #a5aead;
 }
 main article button {
-  margin: 16px;
+  margin: 25px;
   flex-grow: 1;
   background-color: #32c3ef;
 }
 
 footer {
-  padding: 16px;
+  padding: 25px;
   background-color: #151515;
   color: white;
   display: flex;

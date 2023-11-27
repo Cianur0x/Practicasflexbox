@@ -31,19 +31,29 @@ header {
 
 .banner {
   background-image: url(../img/hero.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 400px;
+  // background-size: cover;
+  // background-position: center;
+  height: 500px;
   color: white;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   article {
-    margin: $margen;
+    margin: 0 30px;
+    h1 {
+      font-size: 4rem;
+      font-weight: 100;
+      margin: 50px;
+    }
+
     .buscador {
       color: #a5aead;
       display: flex;
       flex-direction: row;
       background-color: white;
       justify-content: space-between;
+      align-items: center;
+      height: 35px;
     }
   }
 }
@@ -69,6 +79,7 @@ header {
     p {
       flex-grow: 1;
       text-align: center;
+      background-color: crimson;
     }
   }
 }
@@ -88,7 +99,7 @@ main {
   article {
     display: flex;
     flex-direction: column;
-    flex-basis: calc(50% - 34px);
+    flex-basis: calc(50% - 52px);
     border: 1px #a5aead solid;
     background-color: bisque;
     margin: $margen;
