@@ -6,6 +6,7 @@
 
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 25px;
 }
 
 .contenedor {
@@ -25,7 +26,9 @@ header .carrito {
 
 .banner {
   background-image: url(../img/hero.jpg);
-  height: 500px;
+  background-size: cover;
+  background-position: center;
+  height: 600px;
   color: white;
   display: flex;
   flex-direction: column;
@@ -37,7 +40,10 @@ header .carrito {
 .banner article h1 {
   font-size: 4rem;
   font-weight: 100;
-  margin: 50px;
+  margin: 60px 0;
+}
+.banner article h4 {
+  margin: 25px 0;
 }
 .banner article .buscador {
   color: #a5aead;
@@ -46,7 +52,13 @@ header .carrito {
   background-color: white;
   justify-content: space-between;
   align-items: center;
-  height: 35px;
+}
+.banner article .buscador p {
+  margin-left: 25px;
+}
+.banner article .buscador img {
+  padding: 25px;
+  height: 50px;
 }
 
 .menu {
@@ -69,7 +81,6 @@ header .carrito {
 .menu article p {
   flex-grow: 1;
   text-align: center;
-  background-color: crimson;
 }
 
 main {

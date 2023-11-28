@@ -12,6 +12,7 @@
 body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 25px;
 }
 
 .contenedor {
@@ -20,7 +21,7 @@ body {
 }
 
 header {
-  margin: $margen;
+  margin: $espaciado;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -31,9 +32,9 @@ header {
 
 .banner {
   background-image: url(../img/hero.jpg);
-  // background-size: cover;
-  // background-position: center;
-  height: 500px;
+  background-size: cover;
+  background-position: center;
+  height: 600px;
   color: white;
   display: flex;
   flex-direction: column;
@@ -43,7 +44,10 @@ header {
     h1 {
       font-size: 4rem;
       font-weight: 100;
-      margin: 50px;
+      margin: 60px 0;
+    }
+    h4 {
+      margin: 25px 0;
     }
 
     .buscador {
@@ -53,7 +57,14 @@ header {
       background-color: white;
       justify-content: space-between;
       align-items: center;
-      height: 35px;
+      p {
+        margin-left: $espaciado;
+      }
+
+      img {
+        padding: $espaciado;
+        height: 50px;
+      }
     }
   }
 }
@@ -65,7 +76,7 @@ header {
   flex-direction: column;
 
   article {
-    padding: $margen;
+    padding: $espaciado;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -79,7 +90,6 @@ header {
     p {
       flex-grow: 1;
       text-align: center;
-      background-color: crimson;
     }
   }
 }
@@ -102,14 +112,14 @@ main {
     flex-basis: calc(50% - 52px);
     border: 1px #a5aead solid;
     background-color: bisque;
-    margin: $margen;
+    margin: $espaciado;
 
     h3 {
       color: #a5aead;
     }
 
     button {
-      margin: $margen;
+      margin: $espaciado;
       flex-grow: 1;
       background-color: #32c3ef;
     }
@@ -117,7 +127,7 @@ main {
 }
 
 footer {
-  padding: $margen;
+  padding: $espaciado;
   background-color: #151515;
   color: white;
   display: flex;
