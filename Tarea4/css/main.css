@@ -109,75 +109,47 @@ header .cart {
 main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 @media screen and (min-width: 280px) {
   main {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    flex-wrap: wrap-reverse;
   }
-}
-main h1 {
-  flex-basis: 100%;
-  padding: 5px 5px;
-  text-align: center;
-  font-weight: 900;
 }
 main section {
-  display: flex;
-  flex-direction: column;
-  border: 1px #a5aead solid;
-  margin: 20px 16px;
-}
-@media screen and (min-width: 280px) {
-  main section {
-    flex-basis: calc(20% - 32px);
-    justify-content: center;
-  }
-}
-@media screen and (min-width: 480px) {
-  main section {
-    flex-basis: calc(33% - 32px);
-    justify-content: center;
-  }
+  margin: 16px;
+  border: 1px grey solid;
 }
 main section img {
   width: 100%;
 }
 main section article {
-  padding: 12px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  flex-basis: 30%;
 }
 main section article h1 {
-  text-align: left;
-  flex-grow: 1;
+  font-weight: 900;
 }
 main section article h2 {
-  text-align: right;
-  text-decoration: line-through;
   font-weight: 900;
-  margin-bottom: 30px;
+  text-decoration: line-through;
+  text-align: right;
 }
-main section article h4 {
-  font-weight: 600;
+main section article h4,
+main section article h5 {
+  font-weight: 500;
 }
 main section article h5 {
   text-align: left;
-  font-weight: 400;
 }
 main section article #estrellas {
-  margin: 12px 0;
-  width: 90px;
+  width: 85px;
 }
 main section article button {
-  flex-grow: 1;
-  background-color: #32c3ef;
-  padding: 12px;
-  color: #ffffff;
-  font-size: medium;
+  margin-top: 15px;
+  background-color: aqua;
+  padding: 20px;
+  font-size: large;
 }
 
 /*******************

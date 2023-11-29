@@ -128,80 +128,50 @@ header {
 main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 
   @include for-phone {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-  }
-
-  h1 {
-    // preguntar que ha pasado aqui
-    // flex-grow: 1;
-    flex-basis: 100%;
-    padding: 5px 5px;
-    text-align: center;
-    font-weight: 900;
+    flex-wrap: wrap-reverse;
   }
 
   section {
-    display: flex;
-    flex-direction: column;
-    border: 1px #a5aead solid;
-    margin: 20px 16px;
-
-    @include for-phone {
-      flex-basis: calc(20% - 32px);
-      justify-content: center;
-    }
-
-    @include for-tablet {
-      flex-basis: calc(33% - 32px);
-      justify-content: center;
-    }
-
+    margin: 16px;
+    border: 1px grey solid;
+    /////////////////////////////////////////////////////////////////
     img {
-        width: 100%;
+      width: 100%;
     }
+     /////////////////////////////////////////////////////////////////
     article {
-      padding: $espaciado;
+      padding: 15px;
       display: flex;
       flex-direction: column;
-      flex-basis: 30%;
 
       h1 {
-        text-align: left;
-        flex-grow: 1;
+        font-weight: 900;
       }
 
       h2 {
-        text-align: right;
-        text-decoration: line-through;
         font-weight: 900;
-        margin-bottom: 30px;
+        text-decoration: line-through;
+        text-align: right;
       }
 
-      h4 {
-        font-weight: 600;
+      h4,
+      h5 {
+        font-weight: 500;
       }
-
       h5 {
         text-align: left;
-        font-weight: 400;
       }
-
       #estrellas {
-        margin: $espaciado 0;
-        width: 90px;
+        width: 85px;
       }
 
       button {
-        flex-grow: 1;
-        background-color: #32c3ef;
-        padding: $espaciado;
-        color: $white;
-        font-size: medium;
+        margin-top: 15px;
+        background-color: aqua;
+        padding: 20px;
+        font-size: large;
       }
     }
   }
