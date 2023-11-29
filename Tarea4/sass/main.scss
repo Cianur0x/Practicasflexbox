@@ -48,7 +48,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  
+
   padding: 150px 35px;
   article {
     text-align: left;
@@ -146,8 +146,9 @@ main {
       flex-direction: column;
 
       h2 {
+        font-size: 45px;
         font-weight: 900;
-        margin-bottom: $espaciado;
+        margin-bottom: 20px;
       }
 
       h3 {
@@ -195,6 +196,7 @@ footer {
   flex-direction: row;
   text-align: left;
   font-size: 20px;
+
   ul {
     list-style: none;
     flex-grow: 1;
