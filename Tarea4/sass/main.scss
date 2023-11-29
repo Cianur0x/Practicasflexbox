@@ -128,19 +128,32 @@ header {
 main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   @include for-phone {
-    flex-wrap: wrap-reverse;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  h1 {
+    flex-basis: 100%;
+    text-align: center;
   }
 
   section {
+    @include for-phone {
+      flex-basis: calc(48% - 32px);
+    }
+
     margin: 16px;
     border: 1px grey solid;
+
     /////////////////////////////////////////////////////////////////
     img {
       width: 100%;
     }
-     /////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////
     article {
       padding: 15px;
       display: flex;
@@ -148,6 +161,7 @@ main {
 
       h1 {
         font-weight: 900;
+        text-align: left;
       }
 
       h2 {

@@ -109,15 +109,27 @@ header .cart {
 main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 @media screen and (min-width: 280px) {
   main {
-    flex-wrap: wrap-reverse;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
   }
+}
+main h1 {
+  flex-basis: 100%;
+  text-align: center;
 }
 main section {
   margin: 16px;
   border: 1px grey solid;
+}
+@media screen and (min-width: 280px) {
+  main section {
+    flex-basis: calc(48% - 32px);
+  }
 }
 main section img {
   width: 100%;
@@ -129,6 +141,7 @@ main section article {
 }
 main section article h1 {
   font-weight: 900;
+  text-align: left;
 }
 main section article h2 {
   font-weight: 900;
