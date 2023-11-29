@@ -146,6 +146,9 @@ main {
       flex-basis: calc(48% - 32px);
     }
 
+    @include for-tablet {
+      flex-basis: calc(30% - 32px);
+    }
     margin: 16px;
     border: 1px grey solid;
 
@@ -193,7 +196,6 @@ main {
 
 /*******************
       FOOTER
-      fuente general 2 rem
 ******************/
 footer {
   padding: $espaciado;

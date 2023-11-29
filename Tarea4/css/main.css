@@ -131,6 +131,11 @@ main section {
     flex-basis: calc(48% - 32px);
   }
 }
+@media screen and (min-width: 480px) {
+  main section {
+    flex-basis: calc(30% - 32px);
+  }
+}
 main section img {
   width: 100%;
 }
@@ -167,7 +172,6 @@ main section article button {
 
 /*******************
       FOOTER
-      fuente general 2 rem
 ******************/
 footer {
   padding: 12px;
