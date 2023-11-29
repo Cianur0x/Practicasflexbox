@@ -21,7 +21,7 @@ body {
       HEADER
 ******************/
 header {
-  padding: 50px 30px;
+  padding: 45px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -37,14 +37,14 @@ header .carrito {
   background-image: url(../img/hero.jpg);
   background-size: cover;
   background-position: center;
-  height: 700px;
   color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  padding: 150px 35px;
 }
 .banner article {
-  margin: 0 30px;
+  text-align: left;
 }
 .banner article h1 {
   font-size: 5rem;
@@ -107,17 +107,19 @@ header .carrito {
 main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  padding: 0 90px;
 }
 main h1 {
-  padding: 15px;
-  flex-basis: 100%;
+  padding: 30px;
   text-align: center;
+  font-weight: 900;
 }
 main section {
   display: flex;
   flex-direction: column;
-  border: 2px #a5aead solid;
-  margin: 16px 32px;
+  border: 1px #a5aead solid;
+  margin-bottom: 40px;
 }
 main section article {
   padding: 25px;
@@ -126,15 +128,26 @@ main section article {
 }
 main section article h2 {
   font-weight: 900;
+  margin-bottom: 25px;
 }
 main section article h3 {
-  color: #a5aead;
+  font-weight: 400;
 }
 main section article #estrellas {
+  margin: 25px 0;
   width: 250px;
 }
+main section article h4 {
+  text-align: left;
+  font-size: 30px;
+  font-weight: 400;
+}
 main section article p {
+  text-align: right;
+  font-size: 40px;
   text-decoration: line-through;
+  font-weight: 900;
+  margin-bottom: 40px;
 }
 main section article button {
   font-size: 30px;
@@ -148,14 +161,15 @@ main section article button {
       FOOTER
 ******************/
 footer {
-  padding: 25px;
+  padding: 25px 50px;
   background-color: #151515;
   color: #ffffff;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   text-align: left;
+  font-size: 20px;
 }
 footer ul {
   list-style: none;
+  flex-grow: 1;
 }/*# sourceMappingURL=main.css.map */
