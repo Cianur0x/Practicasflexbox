@@ -11,7 +11,6 @@
 
 body {
   font-family: 'Raleway', sans-serif;
-  font-size: 2rem;
 }
 
 /*******************
@@ -26,23 +25,26 @@ body {
       HEADER
 ******************/
 header {
-  padding: 45px;
+  padding: 30px 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
   .carrito {
     display: none;
+  }
+
+  .logo {
+    width: 110px;
+  }
+
+  .cart {
+    width: 25px;
   }
 }
 
 /*******************
       BANNER
-
-
-      font size en
-      h1 5rem
-      h4 2rem
-      p  2rem
 ******************/
 .banner {
   background-image: url(../img/hero.jpg);
@@ -50,22 +52,21 @@ header {
   background-position: center;
   color: $white;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
 
-  padding: 150px 35px;
+  padding: 40px 20px;
   article {
     text-align: left;
 
     h1 {
-      font-size: 5rem;
-      font-weight: 400;
-      margin: 60px 0;
+      font-size: 2rem;
+      font-weight: 500;
+      margin: 50px 0;
     }
 
     h4 {
       margin: 30px 0;
-      font-weight: 400;
+      font-weight: 300;
+      font-size: small;
     }
 
     .buscador {
@@ -75,14 +76,15 @@ header {
       background-color: $white;
       justify-content: space-between;
       align-items: center;
+      padding: $espaciado;
 
       p {
-        margin-left: $espaciado;
+        font-size: x-small;
       }
 
       img {
-        padding: $espaciado;
-        height: 50px;
+        height: 22px;
+        margin-right: -10px;
       }
     }
   }
@@ -98,7 +100,6 @@ header {
   background: linear-gradient(90deg, $color1-menu 0%, $color2-menu 100%);
   display: flex;
   flex-direction: column;
-  padding: $espaciado;
 
   article {
     padding: $espaciado;
@@ -109,36 +110,37 @@ header {
     color: $white;
 
     img {
-      width: 90px;
+      width: 28px;
     }
 
     p {
       flex-grow: 1;
       text-align: center;
-      line-height: 60px;
+      line-height: 20px;
+      font-size: x-small;
     }
   }
 }
 
 /*******************
       MAIN
-      h2: 3rem;
-      h3: 2rem;
-      h4: 2rem:
-      p:  4rem;
 ******************/
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 90px;
 
   @include for-phone {
-    background-color: red;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
   }
 
   h1 {
-    padding: 30px;
+    // preguntar que ha pasado aqui
+    // flex-grow: 1;
+    flex-basis: 100%;
+    padding: 5px 5px;
     text-align: center;
     font-weight: 900;
   }
@@ -147,47 +149,59 @@ main {
     display: flex;
     flex-direction: column;
     border: 1px #a5aead solid;
-    margin-bottom: 40px;
+    margin: 20px 16px;
 
+    @include for-phone {
+      flex-basis: calc(20% - 32px);
+      justify-content: center;
+    }
+
+    @include for-tablet {
+      flex-basis: calc(33% - 32px);
+      justify-content: center;
+    }
+
+    img {
+        width: 100%;
+    }
     article {
       padding: $espaciado;
       display: flex;
       flex-direction: column;
+      flex-basis: 30%;
+
+      h1 {
+        text-align: left;
+        flex-grow: 1;
+      }
 
       h2 {
-        font-size: 3rem;
+        text-align: right;
+        text-decoration: line-through;
         font-weight: 900;
-        margin-bottom: 20px;
-      }
-
-      h3 {
-        font-weight: 500;
-      }
-
-      #estrellas {
-        margin: $espaciado 0;
-        width: 250px;
+        margin-bottom: 30px;
       }
 
       h4 {
+        font-weight: 600;
+      }
+
+      h5 {
         text-align: left;
         font-weight: 400;
       }
 
-      p {
-        text-align: right;
-        font-size:4rem;
-        text-decoration: line-through;
-        font-weight: 900;
-        margin-bottom: 40px;
+      #estrellas {
+        margin: $espaciado 0;
+        width: 90px;
       }
 
       button {
-        font-size: 2.3rem;
         flex-grow: 1;
         background-color: #32c3ef;
         padding: $espaciado;
         color: $white;
+        font-size: medium;
       }
     }
   }
@@ -198,16 +212,16 @@ main {
       fuente general 2 rem
 ******************/
 footer {
-  padding: $espaciado 50px;
+  padding: $espaciado;
   background-color: #151515;
   color: $white;
   display: flex;
   flex-direction: row;
-  text-align: left;
+  font-size: x-small;
 
   ul {
     list-style: none;
     flex-grow: 1;
-    line-height: 50px;
+    line-height: 15px;
   }
 }

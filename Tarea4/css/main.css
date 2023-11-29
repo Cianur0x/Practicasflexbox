@@ -6,7 +6,6 @@
 
 body {
   font-family: "Raleway", sans-serif;
-  font-size: 2rem;
 }
 
 /*******************
@@ -20,7 +19,7 @@ body {
       HEADER
 ******************/
 header {
-  padding: 45px;
+  padding: 30px 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -28,15 +27,15 @@ header {
 header .carrito {
   display: none;
 }
+header .logo {
+  width: 110px;
+}
+header .cart {
+  width: 25px;
+}
 
 /*******************
       BANNER
-
-
-      font size en
-      h1 5rem
-      h4 2rem
-      p  2rem
 ******************/
 .banner {
   background-image: url(../img/hero.jpg);
@@ -44,21 +43,20 @@ header .carrito {
   background-position: center;
   color: #ffffff;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 150px 35px;
+  padding: 40px 20px;
 }
 .banner article {
   text-align: left;
 }
 .banner article h1 {
-  font-size: 5rem;
-  font-weight: 400;
-  margin: 60px 0;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 50px 0;
 }
 .banner article h4 {
   margin: 30px 0;
-  font-weight: 400;
+  font-weight: 300;
+  font-size: small;
 }
 .banner article .buscador {
   color: #a5aead;
@@ -67,13 +65,14 @@ header .carrito {
   background-color: #ffffff;
   justify-content: space-between;
   align-items: center;
+  padding: 12px;
 }
 .banner article .buscador p {
-  margin-left: 25px;
+  font-size: x-small;
 }
 .banner article .buscador img {
-  padding: 25px;
-  height: 50px;
+  height: 22px;
+  margin-right: -10px;
 }
 
 /*******************
@@ -85,10 +84,9 @@ header .carrito {
   background: linear-gradient(90deg, #842551 0%, #e14d51 100%);
   display: flex;
   flex-direction: column;
-  padding: 25px;
 }
 .menu article {
-  padding: 25px;
+  padding: 12px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -96,34 +94,33 @@ header .carrito {
   color: #ffffff;
 }
 .menu article img {
-  width: 90px;
+  width: 28px;
 }
 .menu article p {
   flex-grow: 1;
   text-align: center;
-  line-height: 60px;
+  line-height: 20px;
+  font-size: x-small;
 }
 
 /*******************
       MAIN
-      h2: 3rem;
-      h3: 2rem;
-      h4: 2rem:
-      p:  4rem;
 ******************/
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 90px;
 }
-@media only screen and (min-width: 280px) {
+@media screen and (min-width: 280px) {
   main {
-    background-color: red;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
   }
 }
 main h1 {
-  padding: 30px;
+  flex-basis: 100%;
+  padding: 5px 5px;
   text-align: center;
   font-weight: 900;
 }
@@ -131,42 +128,56 @@ main section {
   display: flex;
   flex-direction: column;
   border: 1px #a5aead solid;
-  margin-bottom: 40px;
+  margin: 20px 16px;
+}
+@media screen and (min-width: 280px) {
+  main section {
+    flex-basis: calc(20% - 32px);
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 480px) {
+  main section {
+    flex-basis: calc(33% - 32px);
+    justify-content: center;
+  }
+}
+main section img {
+  width: 100%;
 }
 main section article {
-  padding: 25px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
+  flex-basis: 30%;
+}
+main section article h1 {
+  text-align: left;
+  flex-grow: 1;
 }
 main section article h2 {
-  font-size: 3rem;
+  text-align: right;
+  text-decoration: line-through;
   font-weight: 900;
-  margin-bottom: 20px;
-}
-main section article h3 {
-  font-weight: 500;
-}
-main section article #estrellas {
-  margin: 25px 0;
-  width: 250px;
+  margin-bottom: 30px;
 }
 main section article h4 {
+  font-weight: 600;
+}
+main section article h5 {
   text-align: left;
   font-weight: 400;
 }
-main section article p {
-  text-align: right;
-  font-size: 4rem;
-  text-decoration: line-through;
-  font-weight: 900;
-  margin-bottom: 40px;
+main section article #estrellas {
+  margin: 12px 0;
+  width: 90px;
 }
 main section article button {
-  font-size: 2.3rem;
   flex-grow: 1;
   background-color: #32c3ef;
-  padding: 25px;
+  padding: 12px;
   color: #ffffff;
+  font-size: medium;
 }
 
 /*******************
@@ -174,15 +185,15 @@ main section article button {
       fuente general 2 rem
 ******************/
 footer {
-  padding: 25px 50px;
+  padding: 12px;
   background-color: #151515;
   color: #ffffff;
   display: flex;
   flex-direction: row;
-  text-align: left;
+  font-size: x-small;
 }
 footer ul {
   list-style: none;
   flex-grow: 1;
-  line-height: 50px;
+  line-height: 15px;
 }/*# sourceMappingURL=main.css.map */
