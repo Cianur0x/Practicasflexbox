@@ -1,11 +1,5 @@
 @import 'variables';
 
-@mixin for-lil-phone {
-  @media (max-width: #{$telefono}) {
-    @content;
-  }
-}
-
 @mixin for-normal-phone {
   @media (min-width: #{$telefono}) {
     @content;
