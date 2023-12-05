@@ -25,22 +25,60 @@ body {
 /*******************
       HEADER
 ******************/
+
+// cuando quierres que ewl basoluto vay aen funcion al padre lo pones en relative, al padre
 header {
   padding: 30px 10px;
   display: flex;
   flex-direction: row;
+  position: relative;
   justify-content: space-between;
-
-  .carrito {
-    display: none;
-  }
 
   .logo {
     width: 110px;
   }
 
-  .cart {
-    width: 25px;
+  .carrito {
+    .contenido {
+      display: none;
+    }
+
+    @include for-desktop {
+      &:hover {
+        .contenido {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          right: 0;
+          section {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            position: relative;
+            background-color: $white;
+            article:nth-child(2) {
+              flex-basis: 50%;
+              background-color: rebeccapurple;
+            }
+            article {
+              display: flex;
+              flex-direction: column;
+              h2 {
+                margin-bottom: 10px;
+                text-align: center;
+              }
+
+              img {
+                width: 180px;
+              }
+            }
+          }
+          button {
+            padding: 15px;
+          }
+        }
+      }
+    }
   }
 }
 

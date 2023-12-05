@@ -16,22 +16,26 @@
 <body>
     <header class="contenedor">
         <img src="img/logo.jpg" alt="logo" class="logo">
-        <img src="img/cart.png" alt="cart" class="cart">
-        <section class="carrito">
-            <article>
-                <p>Imagen</p>
-                <img src="img/curso1.jpg" alt="curso foto">
-            </article>
-            <article>
-                <p>Nombre</p>
-                <p>CSS Grid y Flexbox construye + 10 Proyectos</p>
-            </article>
-            <article>
-                <p>Precio</p>
-                <small>$15</small>
-            </article>
-            <button type="button">Vaciar carrito</button>
-        </section>
+        <div class="carrito">
+            <img src="img/cart.png" class="cart">
+            <div class="contenido">
+                <section>
+                    <article>
+                        <h2>Imagen</h2>
+                        <img src="img/curso1.jpg">
+                    </article>
+                    <article>
+                        <h2>Nombre</h2>
+                        <p>CSS Grid y Flexbox construye + 10 proyectos</p>
+                    </article>
+                    <article>
+                        <h2>Precio</h2>
+                        <p>$15</p>
+                    </article>
+                </section>
+                <button>Vaciar carrito</button>
+            </div>
+        </div>
     </header>
 
 
@@ -218,4 +222,5 @@
         </div>
     </footer>
 </body>
+
 </html>

@@ -23,16 +23,47 @@ header {
   padding: 30px 10px;
   display: flex;
   flex-direction: row;
+  position: relative;
   justify-content: space-between;
-}
-header .carrito {
-  display: none;
 }
 header .logo {
   width: 110px;
 }
-header .cart {
-  width: 25px;
+header .carrito .contenido {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  header .carrito:hover .contenido {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+  }
+  header .carrito:hover .contenido section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    background-color: #ffffff;
+  }
+  header .carrito:hover .contenido section article:nth-child(2) {
+    flex-basis: 50%;
+    background-color: rebeccapurple;
+  }
+  header .carrito:hover .contenido section article {
+    display: flex;
+    flex-direction: column;
+  }
+  header .carrito:hover .contenido section article h2 {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  header .carrito:hover .contenido section article img {
+    width: 180px;
+  }
+  header .carrito:hover .contenido button {
+    padding: 15px;
+  }
 }
 
 /*******************
