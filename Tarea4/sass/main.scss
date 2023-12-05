@@ -24,17 +24,9 @@ body {
 
 /*******************
       HEADER
-
-
-      poner un container para que se pueda centrar el contenido 
-    poner un clas container en ehader y poder centrar mi contendido
-
-
-    para uso de mixins cuando existe una mdoificacion de un moixin dependidneo de algo
-    asies como vamso a ahcer la llamda le paso el color y lo hace por ejemplolo ideal es poenrlo como una clase 
 ******************/
 header {
-  padding: 30px 0;
+  padding: 30px 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -54,24 +46,16 @@ header {
 
 /*******************
       BANNER
-      en main justidy content spacearono bewin
-
-      u eñ tablet felx basis 100%/3 -1rem o $magen y el restamso con margen
-
-
-      tu no puede coger tener un padre y liegoi el hijo y luego ponerel el heig de 100%
-      hay otros añso qeu se el pone altur aal padre NOO
-      altura de 100%% NO
-      disple lex al padre
-       y al hijo felxgro1 y te coge todo el espacio disponible CON FLEX
 ******************/
 .banner {
   background-image: url(../img/hero.jpg);
   background-size: cover;
   background-position: center;
   color: $white;
+  padding: 30px 10px;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: row;
+  align-items: flex-start;
   article {
     flex-grow: 1;
     h1 {
@@ -87,13 +71,16 @@ header {
     }
 
     .buscador {
+      background-color: $white;
       color: #a5aead;
       display: flex;
       flex-direction: row;
-      background-color: $white;
       justify-content: space-between;
-      align-items: center;
       padding: $espaciado;
+
+      @include for-desktop {
+        width: 600px;
+      }
 
       img {
         height: 22px;
@@ -110,16 +97,17 @@ header {
 .menu {
   background: $color1-menu;
   background: linear-gradient(90deg, $color1-menu 0%, $color2-menu 100%);
+  font-size: smaller;
 
   section {
     display: flex;
     flex-direction: column;
+
     @include for-tablet {
       padding: 15px 0;
     }
 
     @include for-desktop {
-      
       font-size: 1rem;
       flex-direction: row;
       justify-content: center;
@@ -154,10 +142,6 @@ main {
   flex-direction: column;
   justify-content: space-between;
 
-  @include for-desktop {
-    font-size: 1rem;
-  }
-
   @include for-phone {
     flex-direction: row;
     flex-wrap: wrap;
@@ -167,26 +151,29 @@ main {
   h1 {
     flex-basis: 100%;
     text-align: center;
+    margin: 12px 0;
   }
 
   section {
     margin: 10px 0;
     border: 1px rgb(240, 237, 237) solid;
+
+    img {
+      width: 100%;
+    }
+
     @include for-phone {
-      flex-basis:calc(56% - 32px);
-      font-size: 0.4em;
+      flex-basis: calc(56% - 32px);
+      font-size: 0.8em;
     }
 
     @include for-tablet {
       flex-basis: calc(36% - 32px);
+      font-size: 1em;
     }
 
     @include for-desktop {
       flex-basis: calc(27% - 32px);
-    }
-
-    img {
-      width: 100%;
     }
 
     article {
@@ -197,6 +184,7 @@ main {
       h1 {
         font-weight: 900;
         text-align: left;
+        margin-bottom: 12px;
       }
 
       h2 {
@@ -207,12 +195,16 @@ main {
 
       h4,
       h5 {
+        margin-top: 12px;
         font-weight: 500;
       }
+
       h5 {
         text-align: left;
       }
+
       #estrellas {
+        margin-top: 12px;
         width: 85px;
       }
 
@@ -233,16 +225,21 @@ footer {
   background-color: #151515;
 
   div {
-    padding: $espaciado;
+    padding: 25px 0;
     color: $white;
     display: flex;
     flex-direction: row;
-    font-size: x-small;
 
     ul {
+      font-size: x-small;
       list-style: none;
       flex-grow: 1;
       line-height: 15px;
+      @include for-desktop {
+        font-size: 1rem;
+        line-height: 22px;
+        flex-basis: 50%;
+      }
     }
   }
 }
