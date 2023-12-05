@@ -71,8 +71,9 @@ header {
   background-position: center;
   color: $white;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   article {
+    flex-grow: 1;
     h1 {
       font-size: 2rem;
       font-weight: 500;
@@ -113,8 +114,18 @@ header {
   section {
     display: flex;
     flex-direction: column;
+    @include for-tablet {
+      padding: 15px 0;
+    }
 
+    @include for-desktop {
+      
+      font-size: 1rem;
+      flex-direction: row;
+      justify-content: center;
+    }
     article {
+      flex-grow: 1;
       padding: $espaciado;
       display: flex;
       flex-direction: row;
@@ -130,7 +141,6 @@ header {
         flex-grow: 1;
         text-align: center;
         line-height: 20px;
-        font-size: x-small;
       }
     }
   }
@@ -142,7 +152,11 @@ header {
 main {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
+
+  @include for-desktop {
+    font-size: 1rem;
+  }
 
   @include for-phone {
     flex-direction: row;
@@ -157,18 +171,18 @@ main {
 
   section {
     margin: 10px 0;
-    border: 1px grey solid;
+    border: 1px rgb(240, 237, 237) solid;
     @include for-phone {
-      flex-basis: 40%;
+      flex-basis:calc(56% - 32px);
       font-size: 0.4em;
     }
 
     @include for-tablet {
-      flex-basis: calc(34% - 32px);
+      flex-basis: calc(36% - 32px);
     }
 
     @include for-desktop {
-      flex-basis: calc(25% - 32px);
+      flex-basis: calc(27% - 32px);
     }
 
     img {
@@ -205,9 +219,8 @@ main {
       button {
         margin-top: 15px;
         background-color: #32c3f0;
+        color: white;
         padding: 10px;
-        font-size: large;
-        font-size: 0.1em;
       }
     }
   }
