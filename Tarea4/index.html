@@ -14,55 +14,55 @@
 </head>
 
 <body>
-    <div class="contenedor">
-        <header>
-            <img src="img/logo.jpg" alt="logo" class="logo">
-            <img src="img/cart.png" alt="cart" class="cart">
-            <section class="carrito">
-                <article>
-                    <p>Imagen</p>
-                    <img src="img/curso1.jpg" alt="curso foto">
-                </article>
-                <article>
-                    <p>Nombre</p>
-                    <p>CSS Grid y Flexbox construye + 10 Proyectos</p>
-                </article>
-                <article>
-                    <p>Precio</p>
-                    <small>$15</small>
-                </article>
-                <button type="button">Vaciar carrito</button>
-            </section>
-        </header>
-    </div>
+    <header class="contenedor">
+        <img src="img/logo.jpg" alt="logo" class="logo">
+        <img src="img/cart.png" alt="cart" class="cart">
+        <section class="carrito">
+            <article>
+                <p>Imagen</p>
+                <img src="img/curso1.jpg" alt="curso foto">
+            </article>
+            <article>
+                <p>Nombre</p>
+                <p>CSS Grid y Flexbox construye + 10 Proyectos</p>
+            </article>
+            <article>
+                <p>Precio</p>
+                <small>$15</small>
+            </article>
+            <button type="button">Vaciar carrito</button>
+        </section>
+    </header>
+
 
     <section class="banner">
-        <article>
+        <article class="contenedor">
             <h1>Aprende algo nuevo</h1>
             <h4>Todos los cursos a $15</h4>
-            <section class="buscador">
-                <p>¿Que te gustaría aprender?</p>
+            <form class="buscador">
+                <input type="text" placeholder="¿Que te gustaría aprender?">
                 <img src="img/lupa.png" alt="lupa">
-            </section>
+            </form>
         </article>
     </section>
-    <section class="menu">
-        <article>
-            <img src="img/icono1.png" alt="bombilla">
-            <p>20.000 cursos en línea <br> Explora los temas más recientes</p>
-        </article>
-        <article>
-            <img src="img/icono2.png" alt="diana">
-            <p>Instructores expertos
-                <br>Aprende con distintos estilos
-            </p>
-        </article>
-        <article>
-            <img src="img/icono3.png" alt="reloj">
-            <p>Acceso de por vida <br> Aprende a tu ritmo</p>
-        </article>
-    </section>
-
+    <div class="menu">
+        <section class="contenedor">
+            <article>
+                <img src="img/icono1.png" alt="bombilla">
+                <p>20.000 cursos en línea <br> Explora los temas más recientes</p>
+            </article>
+            <article>
+                <img src="img/icono2.png" alt="diana">
+                <p>Instructores expertos
+                    <br>Aprende con distintos estilos
+                </p>
+            </article>
+            <article>
+                <img src="img/icono3.png" alt="reloj">
+                <p>Acceso de por vida <br> Aprende a tu ritmo</p>
+            </article>
+        </section>
+    </div>
     <div class="contenedor">
         <main>
             <h1>Cursos En Línea</h1>
@@ -199,7 +199,10 @@
                 </article>
             </section>
         </main>
-        <footer>
+    </div>
+
+    <footer>
+        <div class="contenedor">
             <ul>
                 <li>Para tu negocio</li>
                 <li>Conviertete en Instructor</li>
@@ -212,8 +215,8 @@
                 <li>Empleo</li>
                 <li>Blog</li>
             </ul>
-        </footer>
-    </div>
+        </div>
+    </footer>
 </body>
 
 </html>

@@ -18,14 +18,23 @@ body {
 ******************/
 
 .contenedor {
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 /*******************
       HEADER
+
+
+      poner un container para que se pueda centrar el contenido 
+    poner un clas container en ehader y poder centrar mi contendido
+
+
+    para uso de mixins cuando existe una mdoificacion de un moixin dependidneo de algo
+    asies como vamso a ahcer la llamda le paso el color y lo hace por ejemplolo ideal es poenrlo como una clase 
 ******************/
 header {
-  padding: 30px 10px;
+  padding: 30px 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -45,6 +54,16 @@ header {
 
 /*******************
       BANNER
+      en main justidy content spacearono bewin
+
+      u eñ tablet felx basis 100%/3 -1rem o $magen y el restamso con margen
+
+
+      tu no puede coger tener un padre y liegoi el hijo y luego ponerel el heig de 100%
+      hay otros añso qeu se el pone altur aal padre NOO
+      altura de 100%% NO
+      disple lex al padre
+       y al hijo felxgro1 y te coge todo el espacio disponible CON FLEX
 ******************/
 .banner {
   background-image: url(../img/hero.jpg);
@@ -52,11 +71,8 @@ header {
   background-position: center;
   color: $white;
   display: flex;
-
-  padding: 40px 20px;
+  flex-direction: column;
   article {
-    text-align: left;
-
     h1 {
       font-size: 2rem;
       font-weight: 500;
@@ -78,10 +94,6 @@ header {
       align-items: center;
       padding: $espaciado;
 
-      p {
-        font-size: x-small;
-      }
-
       img {
         height: 22px;
         margin-right: -10px;
@@ -97,26 +109,29 @@ header {
 .menu {
   background: $color1-menu;
   background: linear-gradient(90deg, $color1-menu 0%, $color2-menu 100%);
-  display: flex;
-  flex-direction: column;
 
-  article {
-    padding: $espaciado;
+  section {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    color: $white;
+    flex-direction: column;
 
-    img {
-      width: 28px;
-    }
+    article {
+      padding: $espaciado;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      color: $white;
 
-    p {
-      flex-grow: 1;
-      text-align: center;
-      line-height: 20px;
-      font-size: x-small;
+      img {
+        width: 28px;
+      }
+
+      p {
+        flex-grow: 1;
+        text-align: center;
+        line-height: 20px;
+        font-size: x-small;
+      }
     }
   }
 }
@@ -127,7 +142,7 @@ header {
 main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
 
   @include for-phone {
     flex-direction: row;
@@ -141,7 +156,7 @@ main {
   }
 
   section {
-     margin: 10px;
+    margin: 10px 0;
     border: 1px grey solid;
     @include for-phone {
       flex-basis: 40%;
@@ -149,16 +164,17 @@ main {
     }
 
     @include for-tablet {
-      flex-basis: calc(30% - 32px);
+      flex-basis: calc(34% - 32px);
     }
-   
+
     @include for-desktop {
-      flex-basis: calc(22% - 32px);
+      flex-basis: calc(25% - 32px);
     }
+
     img {
       width: 100%;
     }
-    
+
     article {
       padding: 15px;
       display: flex;
@@ -201,16 +217,19 @@ main {
       FOOTER
 ******************/
 footer {
-  padding: $espaciado;
   background-color: #151515;
-  color: $white;
-  display: flex;
-  flex-direction: row;
-  font-size: x-small;
 
-  ul {
-    list-style: none;
-    flex-grow: 1;
-    line-height: 15px;
+  div {
+    padding: $espaciado;
+    color: $white;
+    display: flex;
+    flex-direction: row;
+    font-size: x-small;
+
+    ul {
+      list-style: none;
+      flex-grow: 1;
+      line-height: 15px;
+    }
   }
 }
