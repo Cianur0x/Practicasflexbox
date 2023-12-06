@@ -1,5 +1,13 @@
 @import 'variables';
 
+@mixin button($background-color) {
+  background-color: $background-color;
+  margin-top: 12px;
+  padding: 12px;
+  text-align: center;
+  color: $white;
+}
+
 @mixin for-phone {
   @media screen and (min-width: #{$telefono}) {
     @content;

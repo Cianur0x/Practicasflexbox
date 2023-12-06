@@ -50,15 +50,16 @@ header {
           flex-direction: column;
           position: absolute;
           right: 0;
+          background-color: $white;
+          padding: 10px;
+          width: 400px;
           section {
             display: flex;
             flex-direction: row;
             justify-content: center;
             position: relative;
-            background-color: $white;
             article:nth-child(2) {
-              flex-basis: 50%;
-              background-color: rebeccapurple;
+              flex-basis: 45%;
             }
             article {
               display: flex;
@@ -69,12 +70,12 @@ header {
               }
 
               img {
-                width: 180px;
+                width: 130px;
               }
             }
           }
           button {
-            padding: 15px;
+            @include button($btn-color);
           }
         }
       }
@@ -90,7 +91,7 @@ header {
   background-size: cover;
   background-position: center;
   color: $white;
-  padding: 30px 10px;
+  padding: 85px 10px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -115,6 +116,10 @@ header {
       flex-direction: row;
       justify-content: space-between;
       padding: $espaciado;
+
+      input {
+        flex-grow: 1;
+      }
 
       @include for-desktop {
         width: 600px;
@@ -247,10 +252,7 @@ main {
       }
 
       button {
-        margin-top: 15px;
-        background-color: #32c3f0;
-        color: white;
-        padding: 10px;
+        @include button($color-primario);
       }
     }
   }

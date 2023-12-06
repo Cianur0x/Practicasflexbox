@@ -38,17 +38,18 @@ header .carrito .contenido {
     flex-direction: column;
     position: absolute;
     right: 0;
+    background-color: #ffffff;
+    padding: 10px;
+    width: 400px;
   }
   header .carrito:hover .contenido section {
     display: flex;
     flex-direction: row;
     justify-content: center;
     position: relative;
-    background-color: #ffffff;
   }
   header .carrito:hover .contenido section article:nth-child(2) {
-    flex-basis: 50%;
-    background-color: rebeccapurple;
+    flex-basis: 45%;
   }
   header .carrito:hover .contenido section article {
     display: flex;
@@ -59,10 +60,14 @@ header .carrito .contenido {
     text-align: center;
   }
   header .carrito:hover .contenido section article img {
-    width: 180px;
+    width: 130px;
   }
   header .carrito:hover .contenido button {
-    padding: 15px;
+    background-color: #741d51;
+    margin-top: 12px;
+    padding: 12px;
+    text-align: center;
+    color: #ffffff;
   }
 }
 
@@ -74,7 +79,7 @@ header .carrito .contenido {
   background-size: cover;
   background-position: center;
   color: #ffffff;
-  padding: 30px 10px;
+  padding: 85px 10px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -100,6 +105,9 @@ header .carrito .contenido {
   justify-content: space-between;
   padding: 12px;
 }
+.banner article .buscador input {
+  flex-grow: 1;
+}
 @media screen and (min-width: 768px) {
   .banner article .buscador {
     width: 600px;
@@ -114,8 +122,8 @@ header .carrito .contenido {
         MENU
 ******************/
 .menu {
-  background: #842551;
-  background: linear-gradient(90deg, #842551 0%, #e14d51 100%);
+  background: #741d51;
+  background: linear-gradient(90deg, #741d51 0%, #e14d51 100%);
   font-size: smaller;
 }
 .menu section {
@@ -224,10 +232,11 @@ main section article #estrellas {
   width: 85px;
 }
 main section article button {
-  margin-top: 15px;
-  background-color: #32c3f0;
-  color: white;
-  padding: 10px;
+  background-color: #3498db;
+  margin-top: 12px;
+  padding: 12px;
+  text-align: center;
+  color: #ffffff;
 }
 
 /*******************
