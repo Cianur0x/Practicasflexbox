@@ -75,7 +75,7 @@ header {
             }
           }
           button {
-            @include button($btn-color);
+            @include button($color-secundario);
           }
         }
       }
@@ -139,7 +139,7 @@ header {
 
 .menu {
   background: $color1-menu;
-  background: linear-gradient(90deg, $color1-menu 0%, $color2-menu 100%);
+  @include gradient($color1-menu, $color2-menu);
   font-size: smaller;
 
   section {

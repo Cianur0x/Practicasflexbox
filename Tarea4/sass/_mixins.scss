@@ -8,6 +8,10 @@
   color: $white;
 }
 
+@mixin gradient($color1, $color2) {
+  background: linear-gradient(90deg, $color1 0%, $color2 100%);
+}
+
 @mixin for-phone {
   @media screen and (min-width: #{$telefono}) {
     @content;
