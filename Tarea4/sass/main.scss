@@ -20,6 +20,12 @@ body {
 .contenedor {
   max-width: 1200px;
   margin: 0 auto;
+
+  h1 {
+    flex-grow: 1; // el primebla el h1 metido en el main con lso artiulos
+    text-align: center;
+    margin: 12px 0;
+  }
 }
 
 /*******************
@@ -35,7 +41,7 @@ header {
   justify-content: space-between;
 
   .logo {
-    width: 110px;
+    max-width: 100%;
   }
 
   .carrito {
@@ -91,10 +97,16 @@ header {
   background-size: cover;
   background-position: center;
   color: $white;
-  padding: 85px 10px;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  padding: 65px 0;
+
+  @include for-tablet {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 85px 0;
+  }
   article {
     flex-grow: 1;
     h1 {
@@ -191,12 +203,6 @@ main {
     align-items: flex-start;
   }
 
-  h1 {
-    flex-basis: 100%;
-    text-align: center;
-    margin: 12px 0;
-  }
-
   section {
     margin: 10px 0;
     border: 1px rgb(240, 237, 237) solid;
@@ -206,17 +212,17 @@ main {
     }
 
     @include for-phone {
-      flex-basis: calc(56% - 32px);
+      flex-basis: calc(50% - 16px);
       font-size: 0.8em;
     }
 
     @include for-tablet {
-      flex-basis: calc(36% - 32px);
+      flex-basis: calc(33% - 16px);
       font-size: 1em;
     }
 
     @include for-desktop {
-      flex-basis: calc(27% - 32px);
+      flex-basis: calc(25% - 16px);
     }
 
     article {
@@ -278,7 +284,7 @@ footer {
       @include for-desktop {
         font-size: 1rem;
         line-height: 22px;
-        flex-basis: 50%;
+        flex-grow: 1;
       }
     }
   }
