@@ -16,28 +16,32 @@
 <body>
     <header class="contenedor">
         <img src="img/logo.jpg" alt="logo" class="logo">
-        <img src="img/cart.png" alt="cart" class="cart">
-        <section class="carrito">
-            <article>
-                <p>Imagen</p>
-                <img src="img/curso1.jpg" alt="curso foto">
-            </article>
-            <article>
-                <p>Nombre</p>
-                <p>CSS Grid y Flexbox construye + 10 Proyectos</p>
-            </article>
-            <article>
-                <p>Precio</p>
-                <small>$15</small>
-            </article>
-            <button type="button">Vaciar carrito</button>
-        </section>
+        <div class="carrito">
+            <img src="img/cart.png" class="cart">
+            <div class="contenido">
+                <section>
+                    <article>
+                        <h2>Imagen</h2>
+                        <img src="img/curso1.jpg">
+                    </article>
+                    <article>
+                        <h2>Nombre</h2>
+                        <p>CSS Grid y Flexbox construye + 10 proyectos</p>
+                    </article>
+                    <article>
+                        <h2>Precio</h2>
+                        <p>$15</p>
+                    </article>
+                </section>
+                <button>Vaciar carrito</button>
+            </div>
+        </div>
     </header>
 
 
     <section class="banner">
         <article class="contenedor">
-            <h1>Aprende algo nuevo</h1>
+            <h2>Aprende algo nuevo</h2>
             <h4>Todos los cursos a $15</h4>
             <form class="buscador">
                 <input type="text" placeholder="¿Que te gustaría aprender?">
@@ -64,8 +68,8 @@
         </section>
     </div>
     <div class="contenedor">
+        <h1>Cursos En Línea</h1>
         <main>
-            <h1>Cursos En Línea</h1>
             <section class="curso">
                 <img src="img/curso1.jpg" alt="" srcset="">
                 <article>

@@ -20,50 +20,77 @@ body {
 .contenedor {
   max-width: 1200px;
   margin: 0 auto;
+
+  h1 {
+    flex-grow: 1; // el primebla el h1 metido en el main con lso artiulos
+    text-align: center;
+    margin: 12px 0;
+  }
 }
 
 /*******************
       HEADER
-
-
-      poner un container para que se pueda centrar el contenido 
-    poner un clas container en ehader y poder centrar mi contendido
-
-
-    para uso de mixins cuando existe una mdoificacion de un moixin dependidneo de algo
-    asies como vamso a ahcer la llamda le paso el color y lo hace por ejemplolo ideal es poenrlo como una clase 
 ******************/
+
+// cuando quieres que el absoluto vaya en función al padre lo pones en relative, al padre
 header {
-  padding: 30px 0;
+  padding: 30px 10px;
   display: flex;
   flex-direction: row;
+  position: relative;
   justify-content: space-between;
 
-  .carrito {
-    display: none;
-  }
-
   .logo {
-    width: 110px;
+    max-width: 100%;
   }
 
-  .cart {
-    width: 25px;
+  .carrito {
+    .contenido {
+      display: none;
+    }
+
+    @include for-desktop {
+      &:hover {
+        .contenido {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          right: 0;
+          background-color: $white;
+          padding: 10px;
+          width: 400px;
+          section {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            position: relative;
+            article:nth-child(2) {
+              flex-basis: 45%;
+            }
+            article {
+              display: flex;
+              flex-direction: column;
+              h2 {
+                margin-bottom: 10px;
+                text-align: center;
+              }
+
+              img {
+                width: 130px;
+              }
+            }
+          }
+          button {
+            @include button($color-secundario);
+          }
+        }
+      }
+    }
   }
 }
 
 /*******************
       BANNER
-      en main justidy content spacearono bewin
-
-      u eñ tablet felx basis 100%/3 -1rem o $magen y el restamso con margen
-
-
-      tu no puede coger tener un padre y liegoi el hijo y luego ponerel el heig de 100%
-      hay otros añso qeu se el pone altur aal padre NOO
-      altura de 100%% NO
-      disple lex al padre
-       y al hijo felxgro1 y te coge todo el espacio disponible CON FLEX
 ******************/
 .banner {
   background-image: url(../img/hero.jpg);
@@ -72,7 +99,16 @@ header {
   color: $white;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 65px 0;
+
+  @include for-tablet {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 85px 0;
+  }
   article {
+    flex-grow: 1;
     h1 {
       font-size: 2rem;
       font-weight: 500;
@@ -86,13 +122,20 @@ header {
     }
 
     .buscador {
+      background-color: $white;
       color: #a5aead;
       display: flex;
       flex-direction: row;
-      background-color: $white;
       justify-content: space-between;
-      align-items: center;
       padding: $espaciado;
+
+      input {
+        flex-basis: 80%;
+      }
+
+      @include for-desktop {
+        width: 600px;
+      }
 
       img {
         height: 22px;
@@ -108,13 +151,24 @@ header {
 
 .menu {
   background: $color1-menu;
-  background: linear-gradient(90deg, $color1-menu 0%, $color2-menu 100%);
+  @include gradient($color1-menu, $color2-menu);
+  font-size: smaller;
 
   section {
     display: flex;
     flex-direction: column;
 
+    @include for-tablet {
+      padding: 15px 0;
+    }
+
+    @include for-desktop {
+      font-size: 1rem;
+      flex-direction: row;
+      justify-content: center;
+    }
     article {
+      flex-grow: 1;
       padding: $espaciado;
       display: flex;
       flex-direction: row;
@@ -130,7 +184,6 @@ header {
         flex-grow: 1;
         text-align: center;
         line-height: 20px;
-        font-size: x-small;
       }
     }
   }
@@ -142,7 +195,7 @@ header {
 main {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 
   @include for-phone {
     flex-direction: row;
@@ -150,29 +203,26 @@ main {
     align-items: flex-start;
   }
 
-  h1 {
-    flex-basis: 100%;
-    text-align: center;
-  }
-
   section {
     margin: 10px 0;
-    border: 1px grey solid;
-    @include for-phone {
-      flex-basis: 40%;
-      font-size: 0.4em;
-    }
-
-    @include for-tablet {
-      flex-basis: calc(34% - 32px);
-    }
-
-    @include for-desktop {
-      flex-basis: calc(25% - 32px);
-    }
+    border: 1px rgb(240, 237, 237) solid;
 
     img {
       width: 100%;
+    }
+
+    @include for-phone {
+      flex-basis: calc(50% - 16px);
+      font-size: 0.8em;
+    }
+
+    @include for-tablet {
+      flex-basis: calc(33% - 16px);
+      font-size: 1em;
+    }
+
+    @include for-desktop {
+      flex-basis: calc(25% - 16px);
     }
 
     article {
@@ -183,6 +233,7 @@ main {
       h1 {
         font-weight: 900;
         text-align: left;
+        margin-bottom: 12px;
       }
 
       h2 {
@@ -193,21 +244,21 @@ main {
 
       h4,
       h5 {
+        margin-top: 12px;
         font-weight: 500;
       }
+
       h5 {
         text-align: left;
       }
+
       #estrellas {
+        margin-top: 12px;
         width: 85px;
       }
 
       button {
-        margin-top: 15px;
-        background-color: #32c3f0;
-        padding: 10px;
-        font-size: large;
-        font-size: 0.1em;
+        @include button($color-primario);
       }
     }
   }
@@ -220,16 +271,21 @@ footer {
   background-color: #151515;
 
   div {
-    padding: $espaciado;
+    padding: 25px 0;
     color: $white;
     display: flex;
     flex-direction: row;
-    font-size: x-small;
 
     ul {
+      font-size: x-small;
       list-style: none;
       flex-grow: 1;
       line-height: 15px;
+      @include for-desktop {
+        font-size: 1rem;
+        line-height: 22px;
+        flex-grow: 1;
+      }
     }
   }
 }
