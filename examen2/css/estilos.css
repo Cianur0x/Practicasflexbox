@@ -1,0 +1,8 @@
+/* @import '_variables.scss'; */
+/* @import '_mixins.scss'; */
+header {
+  background-position: center;
+  background-attachment: contain;
+  background-size: cover;
+  min-height: 580px;
+}/*# sourceMappingURL=estilos.css.map */

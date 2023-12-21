@@ -1,0 +1,44 @@
+// Uno con los estilos más básicos de grid, es decir, con grid-row-start, los porcentajes repetidos,
+// etc. Nombre estilos1
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contenedor {
+  display: grid;
+  grid-template-columns: 25% 1fr 1fr 1fr;
+  grid-template-rows: 15% 35% 35% 1fr;
+  min-height: 100vh;
+  gap: 5px;
+}
+
+header {
+  background-color: coral;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  h1 {
+    text-align: center;
+    color: white;
+  }
+}
+
+main {
+  background-color: darkred;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+aside {
+  background-color: cadetblue;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+footer {
+  background-color: blue;
+  grid-row-start: 4;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}

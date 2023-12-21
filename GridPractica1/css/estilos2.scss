@@ -1,0 +1,38 @@
+// Otro con los estilos más avanzados, es decir, utiliza las barras (/) en vez de start y end, utiliza
+// repeat, etc. estilos2
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contenedor {
+  display: grid;
+  grid-column: repeat(auto-fill, minmax(25%, 1fr));
+  grid-row: 15% repeat(2, 35%) 1fr;
+  min-height: 100vh;
+  gap: 5px;
+}
+
+header {
+  background-color: coral;
+  grid-column: 1/ 5;
+  h1 {
+    text-align: center;
+    color: white;
+  }
+}
+
+main {
+  background-color: darkred;
+  grid-column: 1/ 4;
+  grid-row: 2/ 4;
+}
+aside {
+  background-color: cadetblue;
+  grid-row: 2/ 4;
+}
+footer {
+  background-color: blue;
+  grid-column: 1/ 5;
+}

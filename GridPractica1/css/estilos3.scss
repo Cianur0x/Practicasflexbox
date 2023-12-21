@@ -1,0 +1,39 @@
+// Un último, utilizando los template áreas. estilos3
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contenedor {
+  display: grid;
+  grid-template-areas:
+    'h h h h'
+    'm m m a'
+    'm m m a'
+    'f f f f';
+  min-height: 100vh;
+  gap: 5px;
+}
+
+header {
+  background-color: coral;
+  grid-area: h;
+  h1 {
+    text-align: center;
+    color: white;
+  }
+}
+
+main {
+  background-color: darkred;
+  grid-area: m;
+}
+aside {
+  grid-area: a;
+  background-color: cadetblue;
+}
+footer {
+  grid-area: f;
+  background-color: blue;
+}
