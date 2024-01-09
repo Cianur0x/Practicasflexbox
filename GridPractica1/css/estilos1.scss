@@ -12,8 +12,8 @@
 .contenedor {
   display: grid;
   grid-template-columns: 25% 1fr 1fr 1fr;
-  grid-template-rows: 15% 35% 35% 1fr;
-  min-height: 100vh;
+  // grid-template-rows: 15% 35% 35% 1fr;
+  // min-height: 100vh;
   gap: 5px;
 }
 
@@ -21,6 +21,7 @@ header {
   background-color: $header-color;
   grid-column-start: 1;
   grid-column-end: 5;
+
   h1 {
     text-align: center;
     color: white;
@@ -29,13 +30,14 @@ header {
 
 main {
   background-color: $main-color;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  // grid-row-start: 2;
+  // grid-row-end: 3;
   grid-column-start: 1;
   grid-column-end: 5;
+
   @include mediaQuery {
-    grid-row-start: 2;
-    grid-row-end: 4;
+    // grid-row-start: 2;
+    // grid-row-end: 4;
     grid-column-end: 4;
   }
 }
@@ -44,10 +46,11 @@ aside {
   background-color: $aside-color;
   grid-column-start: 1;
   grid-column-end: 5;
-  grid-row-start: 3;
-  grid-row-end: 4;
+  // grid-row-start: 3;
+  // grid-row-end: 4;
+
   @include mediaQuery {
-    grid-row-start: 2;
+    // grid-row-start: 2;
     grid-column-start: 4;
     grid-column-end: 5;
   }
@@ -55,7 +58,7 @@ aside {
 
 footer {
   background-color: $footer-color;
-  grid-row-start: 4;
+  // grid-row-start: 4;
   grid-column-start: 1;
   grid-column-end: 5;
 }

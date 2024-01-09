@@ -1,16 +1,15 @@
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 .contenedor {
-  display: grid;
   grid-column: repeat(auto-fill, minmax(25%, 1fr));
-  gap: 5px;
 }
 
-main img {
+main {
+  display: grid;
+  gap: 18;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+main article {
+  background-color: rgb(177, 78, 177);
+}
+main article img {
   width: 100%;
 }/*# sourceMappingURL=main.css.map */

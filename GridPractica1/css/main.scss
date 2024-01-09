@@ -3,20 +3,23 @@
 
 // main css conjunto con un estilo usado antes
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .contenedor {
-  display: grid;
   grid-column: repeat(auto-fill, minmax(25%, 1fr));
-  gap: 5px;
 }
 
 main {
-  img {
-    width: 100%;
+  display: grid;
+  gap: 18;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+
+  article {
+
+    background-color: $article-color;
+
+    img {
+      width: 100%;
+    }
   }
+
 }

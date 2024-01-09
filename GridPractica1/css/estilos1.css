@@ -1,15 +1,12 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .contenedor {
   display: grid;
   grid-template-columns: 25% 1fr 1fr 1fr;
-  grid-template-rows: 15% 35% 35% 1fr;
-  min-height: 100vh;
   gap: 5px;
 }
 
@@ -25,15 +22,11 @@ header h1 {
 
 main {
   background-color: darkred;
-  grid-row-start: 2;
-  grid-row-end: 3;
   grid-column-start: 1;
   grid-column-end: 5;
 }
 @media screen and (min-width: 480px) {
   main {
-    grid-row-start: 2;
-    grid-row-end: 4;
     grid-column-end: 4;
   }
 }
@@ -42,12 +35,9 @@ aside {
   background-color: cadetblue;
   grid-column-start: 1;
   grid-column-end: 5;
-  grid-row-start: 3;
-  grid-row-end: 4;
 }
 @media screen and (min-width: 480px) {
   aside {
-    grid-row-start: 2;
     grid-column-start: 4;
     grid-column-end: 5;
   }
@@ -55,7 +45,6 @@ aside {
 
 footer {
   background-color: blue;
-  grid-row-start: 4;
   grid-column-start: 1;
   grid-column-end: 5;
 }/*# sourceMappingURL=estilos1.css.map */
