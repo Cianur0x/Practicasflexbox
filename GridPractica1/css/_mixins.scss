@@ -1,0 +1,18 @@
+@mixin estilo1 {
+  @media screen and (min-width: #{$telefono}) {
+    @content;
+  }
+}
+
+@mixin estilo2 {
+  @media screen and (min-width: #{$telefono}) {
+    @content;
+  }
+}
+
+@mixin estilo3 {
+  @media screen and (min-width: #{$telefono}) {
+    @content;
+  }
+}
+

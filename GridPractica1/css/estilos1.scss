@@ -1,5 +1,8 @@
 // Uno con los estilos más básicos de grid, es decir, con grid-row-start, los porcentajes repetidos,
 // etc. Nombre estilos1
+@import 'variables';
+@import 'mixins';
+
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +18,7 @@
 }
 
 header {
-  background-color: coral;
+  background-color: $header-color;
   grid-column-start: 1;
   grid-column-end: 5;
   h1 {
@@ -25,19 +28,32 @@ header {
 }
 
 main {
-  background-color: darkred;
+  background-color: $main-color;
   grid-row-start: 2;
   grid-row-end: 4;
   grid-column-start: 1;
   grid-column-end: 4;
+  @include estilo1 {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-end: 5;
+  }
 }
+
 aside {
-  background-color: cadetblue;
+  background-color: $aside-color;
   grid-row-start: 2;
   grid-row-end: 4;
+  @include estilo1 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
 }
+
 footer {
-  background-color: blue;
+  background-color: $footer-color;
   grid-row-start: 4;
   grid-column-start: 1;
   grid-column-end: 5;

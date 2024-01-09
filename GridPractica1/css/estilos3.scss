@@ -1,4 +1,7 @@
 // Un último, utilizando los template áreas. estilos3
+@import 'variables';
+@import 'mixins';
+
 * {
   margin: 0;
   padding: 0;
@@ -11,13 +14,14 @@
     'h h h h'
     'm m m a'
     'm m m a'
+    'm m m a'
     'f f f f';
   min-height: 100vh;
   gap: 5px;
 }
 
 header {
-  background-color: coral;
+  background-color: $header-color;
   grid-area: h;
   h1 {
     text-align: center;
@@ -26,14 +30,20 @@ header {
 }
 
 main {
-  background-color: darkred;
+  // cuando quiero que
+  // autorll va a coger un minimo de 200px y un maximo de la ficcion si tiene > de 200 entrarian dos articulos
+  // dejando en blanco un espacio para otr en caso de que no haya,
+  // se usa en articulos, en hijos que se reparta el espacio por igual
+  // AUTOFIT VA A COGER DE 200PX A LO QUE HAYA, SE AJUSTA A TODO, uso en galaria de imgenes por ejemplo
+  // grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  background-color: $main-color;
   grid-area: m;
 }
 aside {
   grid-area: a;
-  background-color: cadetblue;
+  background-color: $aside-color;
 }
 footer {
   grid-area: f;
-  background-color: blue;
+  background-color: $footer-color;
 }
