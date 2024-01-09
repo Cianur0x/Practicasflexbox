@@ -1,18 +1,5 @@
-@mixin estilo1 {
+@mixin mediaQuery {
   @media screen and (min-width: #{$telefono}) {
     @content;
   }
 }
-
-@mixin estilo2 {
-  @media screen and (min-width: #{$telefono}) {
-    @content;
-  }
-}
-
-@mixin estilo3 {
-  @media screen and (min-width: #{$telefono}) {
-    @content;
-  }
-}
-

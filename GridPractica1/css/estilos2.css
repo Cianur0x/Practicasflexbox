@@ -24,13 +24,26 @@ header h1 {
 
 main {
   background-color: darkred;
-  grid-column: 1/4;
-  grid-row: 2/4;
+  grid-column: 1/5;
+  grid-row: 2/3;
+}
+@media screen and (min-width: 480px) {
+  main {
+    grid-column: 1/4;
+    grid-row: 2/4;
+  }
 }
 
 aside {
   background-color: cadetblue;
-  grid-row: 2/4;
+  grid-column: 1/5;
+  grid-row: 3/4;
+}
+@media screen and (min-width: 480px) {
+  aside {
+    grid-column: 4/5;
+    grid-row: 2/4;
+  }
 }
 
 footer {
