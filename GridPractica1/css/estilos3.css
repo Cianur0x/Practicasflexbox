@@ -1,13 +1,12 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .contenedor {
   display: grid;
-  grid-template-areas: "h h h h" "m m m m" "a a a a" "f f f f";
-  min-height: 100vh;
   gap: 5px;
 }
 @media screen and (min-width: 480px) {

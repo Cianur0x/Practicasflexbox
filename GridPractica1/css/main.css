@@ -1,15 +1,30 @@
 .contenedor {
-  grid-column: repeat(auto-fill, minmax(25%, 1fr));
+  grid-template-columns: calc(25% - 18.75px) calc(25% - 18.75px) calc(25% - 18.75px) calc(25% - 18.75px);
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 main {
   display: grid;
-  gap: 18;
+  gap: 10px 15px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 main article {
-  background-color: rgb(177, 78, 177);
+  background-color: violet;
+  border-radius: 5px;
+}
+main article h2 {
+  padding: 5px 0;
+  text-align: center;
 }
 main article img {
+  padding: 10px;
   width: 100%;
+}
+main article p {
+  padding: 15px;
 }/*# sourceMappingURL=main.css.map */
