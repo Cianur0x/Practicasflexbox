@@ -71,10 +71,12 @@ main section {
     grid-row: 2/3;
   }
   main section .mini1 {
+    align-self: center;
     grid-row: 3/4;
     grid-column: 3/4;
   }
   main section .mini2 {
+    align-self: center;
     grid-row: 4/5;
     grid-column: 1/2;
   }

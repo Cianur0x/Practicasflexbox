@@ -72,10 +72,12 @@ main {
         grid-row: 2/3;
       }
       .mini1 {
+        align-self: center;
         grid-row: 3/4;
         grid-column: 3/4;
       }
       .mini2 {
+        align-self: center;
         grid-row: 4/5;
         grid-column: 1/2;
       }
