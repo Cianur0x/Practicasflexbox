@@ -48,9 +48,11 @@ nav ul li a {
 main article img {
   width: 100%;
 }
+main section {
+  display: grid;
+}
 @media screen and (min-width: 768px) {
   main section {
-    display: grid;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
@@ -98,10 +100,10 @@ main section .detalles li {
   margin: 15px 0;
 }
 main section .mini1 {
-  text-align: center;
+  justify-self: center;
 }
 main section .mini2 {
-  text-align: center;
+  justify-self: center;
 }
 main section h1 {
   margin: 15px 0;
