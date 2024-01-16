@@ -63,7 +63,7 @@ main {
         margin: 15px 0;
       }
       .especial {
-        margin: 0 100px;
+        margin: 0 4rem;
         font-size: larger;
         font-style: italic;
       }
@@ -77,6 +77,37 @@ main {
         text-align: center;
         color: white;
       }
+    }
+  }
+}
+
+footer {
+  background-color: $hover-menu;
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 25px 0;
+
+    ul {
+      li {
+        text-align: center;
+        padding: 3px 0;
+        h4 {
+          margin: 15px 0;
+        }
+        a {
+          color: black;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  .copy {
+    background-color: black;
+    padding: 25px 0;
+    p {
+      text-align: center;
+      color: white;
     }
   }
 }
