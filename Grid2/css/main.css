@@ -93,10 +93,10 @@ main section {
 }
 main section .detalles {
   margin: 10px 0;
-  text-align: center;
   padding: 25px 0;
 }
 main section .detalles li {
+  text-align: center;
   margin: 15px 0;
 }
 main section .mini1 {
