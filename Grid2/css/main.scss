@@ -27,7 +27,7 @@ header {
 }
 
 nav {
-  background-color: black;
+  background-color: $bg-color;
   margin: $spacing1 0;
   ul {
     display: grid;
@@ -41,7 +41,7 @@ nav {
         }
       }
       a {
-        color: white;
+        color: $font-color;
       }
     }
   }
@@ -145,7 +145,7 @@ main {
       a {
         font-size: large;
         text-align: center;
-        color: white;
+        color: $font-color;
       }
     }
   }
@@ -162,7 +162,6 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     padding: $spacing1 0;
-
     ul {
       li {
         text-align: center;
@@ -179,7 +178,7 @@ footer {
   }
 
   .copy {
-    background-color: black;
+    background-color: $bg-color;
     padding: $spacing1 0;
 
     p {
