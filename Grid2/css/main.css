@@ -97,6 +97,7 @@ main section .detalles li {
 main section h1 {
   margin: 15px 0;
   font-weight: 900;
+  text-align: center;
 }
 main section div p {
   margin: 25px 10px;
