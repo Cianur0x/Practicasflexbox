@@ -32,9 +32,6 @@ nav ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
-nav ul li {
-  padding: 15px;
-}
 nav ul li:hover {
   background-color: #c9c84a;
 }
@@ -42,6 +39,8 @@ nav ul li:hover a {
   color: black;
 }
 nav ul li a {
+  display: block;
+  padding: 15px;
   color: white;
 }
 
