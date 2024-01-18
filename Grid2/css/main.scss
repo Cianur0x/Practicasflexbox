@@ -33,6 +33,8 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     li {
+      // para que el li ocupe todo, entonces el a pontiner saldra en todo el bloque
+      display: grid;
       &:hover {
         background-color: $verde-color;
         a {
@@ -40,7 +42,6 @@ nav {
         }
       }
       a {
-        display: block;
         padding: $spacing2;
         color: $font-color;
       }
