@@ -4,10 +4,15 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; // no porque generan conflictos en las cajas
   list-style: none;
   text-decoration: none;
 }
+
+// para qu elas imagenes usan mas content
+// img {
+//   max-width: 100%;
+// }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -22,7 +27,7 @@ header {
   display: grid;
   grid-template-columns: 1fr; // es una sola columna y el elemento lo alinea a la izquierda
   img {
-    max-width: 100%;
+    max-width: 100%; // serviria poniendo solo con max-width, no hari falta el display column
   }
 }
 
@@ -31,10 +36,13 @@ nav {
   margin: $spacing2 0;
   ul {
     display: grid;
+    // hueco que queda qeuda libre, es auto-fill SIEMPRE VA A IR EN LOS ARTICULOS, el divide,
+    // ocupa todo aunque el espacio o contenido sea menor
+    // que el hueco se rellene es auto-fit
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     li {
       // para que el li ocupe todo, entonces el a pontiner saldra en todo el bloque
-      display: grid;
+      display: grid; // para que crezca el hijo y se rellene el espacio
       &:hover {
         background-color: $verde-color;
         a {
@@ -58,20 +66,22 @@ main {
 
   section {
     display: grid;
-    justify-items: center;
+    // justify-items: center;
+    grid-template-columns: 1fr; // los hijos s emten cad auno en usus huecos sin hacer nada(uno debajo de otro
+    // solo en todo caso se deberi indicar la alineacion de los objetos)
 
     @include mediaQuery {
-      align-items: center;
+      // align-items: center;
+      // crea 3 columnas y 4 filas
       grid-template-columns: minmax(10px, max-content) auto minmax(
           100px,
           max-content
         );
-
       grid-template-rows: repeat(4, auto);
       column-gap: $spacing2;
 
       h1 {
-        grid-row: 1/2;
+        grid-row: 1/2; // no hrai falta pornerlo pq ya ets aen su fila, los demás sí
         grid-column: 1/4;
       }
 
@@ -97,11 +107,16 @@ main {
     }
 
     .detalles {
-      justify-self: normal;
+      // que los detalles vayan creciendo y ocupen todo, ponemos
+      display: grid;
+      align-items: center; // se alinean verticalmente
+      // afecta el padre
+      // justify-self: normal; // se achica como si fuera una torre si no ponemos esto
+      // align-self: normal; // aling self se apalsta si no le ponemos esto
       margin: $spacing2 0;
       li {
         text-align: center;
-        margin: $spacing1 0;
+        // margin: $spacing1 0;
         font-weight: bold;
       }
     }

@@ -30,9 +30,7 @@ header {
 header .navegacion {
   display: grid;
   grid-template-columns: 1fr;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  row-gap: 10px;
 }
 @media screen and (min-width: 768px) {
   header .navegacion {
@@ -47,19 +45,28 @@ header .navegacion {
     grid-column: 3/4;
   }
 }
-header .navegacion nav ul {
+header .navegacion div {
+  background-color: blueviolet;
+  justify-self: center;
+}
+header .navegacion ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  justify-items: center;
+  background-color: #000000;
+  justify-self: normal;
 }
-header .navegacion nav ul li a {
+header .navegacion ul li {
+  display: grid;
+}
+header .navegacion ul li a {
   color: var(--claro);
 }
 
 .sobre-nosotros {
   display: grid;
   grid-template-columns: 1fr;
+  justify-items: center;
 }
 .sobre-nosotros div img {
-  min-width: 100%;
+  max-width: 100%;
 }/*# sourceMappingURL=main.css.map */

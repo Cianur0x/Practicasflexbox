@@ -51,13 +51,10 @@ main article img {
 }
 main section {
   display: grid;
-  justify-items: center;
+  grid-template-columns: 1fr;
 }
 @media screen and (min-width: 768px) {
   main section {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     grid-template-columns: minmax(10px, -webkit-max-content) auto minmax(100px, -webkit-max-content);
     grid-template-columns: minmax(10px, max-content) auto minmax(100px, max-content);
     grid-template-rows: repeat(4, auto);
@@ -87,12 +84,14 @@ main section {
   }
 }
 main section .detalles {
-  justify-self: normal;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 15px 0;
 }
 main section .detalles li {
   text-align: center;
-  margin: 25px 0;
   font-weight: bold;
 }
 main section h1 {

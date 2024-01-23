@@ -32,7 +32,8 @@ header {
   .navegacion {
     display: grid;
     grid-template-columns: 1fr; // una columna el elemento alineadao a la izquierda
-    align-items: center;
+    row-gap: 10px;
+
     // 1fr va a ocupar lo maximo posible, auto se ajusta a su contenido
     @include escritorio {
       grid-template-columns: minmax(10px, max-content) auto auto;
@@ -47,20 +48,21 @@ header {
     }
 
     div {
+      background-color: blueviolet;
+      justify-self: center;
       img {
       }
     }
 
-    nav {
-      ul {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); // autofill
+      background-color: #000000;
+      justify-self: normal;
+      li {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-
-        justify-items: center;
-        li {
-          a {
-            color: var(--claro);
-          }
+        a {
+          color: var(--claro);
         }
       }
     }
@@ -70,9 +72,10 @@ header {
 .sobre-nosotros {
   display: grid;
   grid-template-columns: 1fr;
+  justify-items: center;
   div {
     img {
-      min-width: 100%;
+      max-width: 100%;
     }
   }
   h1 {
