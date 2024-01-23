@@ -1,12 +1,1 @@
-{
-    "version": 3,
-    "sourceRoot": "",
-    "sources": [
-        "estilos3.scss",
-        "_mixins.scss",
-        "_variables.scss"
-    ],
-    "names": [],
-    "mappings": "AAIA;EACE;EACA;EACA;;;AAGF;EACE;EAOA;;ACjBA;EDSF;IAWI,qBACE;;;;AAON;EACE,kBE7Ba;EF8Bb;;AACA;EACE;EACA;;;AAIJ;EAOE,kBE3CW;EF4CX;;;AAEF;EACE;EACA,kBE9CY;;;AFgDd;EACE;EACA,kBEjDa",
-    "file": "estilos3.css"
-}
+{"version":3,"sources":["estilos3.scss","estilos3.css","_mixins.scss","_variables.scss"],"names":[],"mappings":"AAIA;EACE,SAAA;EACA,UAAA;EACA,8BAAA;UAAA,sBAAA;ACHF;;ADMA;EACE,aAAA;EAOA,QAAA;ACTF;ACRE;EFSF;IAWI,4DACE;ECTJ;AACF;;ADeA;EACE,uBG7Ba;EH8Bb,YAAA;ACZF;ADaE;EACE,kBAAA;EACA,YAAA;ACXJ;;ADeA;EAOE,yBG3CW;EH4CX,YAAA;AClBF;;ADoBA;EACE,YAAA;EACA,2BG9CY;AF6Bd;;ADmBA;EACE,YAAA;EACA,sBGjDa;AFiCf","file":"estilos3.css"}

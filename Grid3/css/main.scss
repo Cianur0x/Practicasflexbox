@@ -1,10 +1,82 @@
+@import 'variables';
+@import 'mixins';
+
 :root {
-    --primario: #7abe47;
-    --secundario: #ffc845;
-    --negro: #000000;
-    --claro: #ffffff;
-    --gris: #eeeeee;
-    --oscuro: #57a42b;
-    --padding: 1rem;
-    --paddingt: 2rem;
+  --primario: #7abe47;
+  --secundario: #ffc845;
+  --negro: #000000;
+  --claro: #ffffff;
+  --gris: #eeeeee;
+  --oscuro: #57a42b;
+  --padding: 1rem;
+  --paddingt: 2rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: var(--primario);
+
+  .navegacion {
+    display: grid;
+    grid-template-columns: 1fr; // una columna el elemento alineadao a la izquierda
+    align-items: center;
+    // 1fr va a ocupar lo maximo posible, auto se ajusta a su contenido
+    @include escritorio {
+      grid-template-columns: minmax(10px, max-content) auto auto;
+      background-color: red;
+      div {
+        grid-column: 1/2;
+      }
+
+      nav {
+        grid-column: 3/4;
+      }
+    }
+
+    div {
+      img {
+      }
+    }
+
+    nav {
+      ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+        justify-items: center;
+        li {
+          a {
+            color: var(--claro);
+          }
+        }
+      }
+    }
+  }
+}
+
+.sobre-nosotros {
+  display: grid;
+  grid-template-columns: 1fr;
+  div {
+    img {
+      min-width: 100%;
+    }
+  }
+  h1 {
+  }
+  p {
+  }
 }

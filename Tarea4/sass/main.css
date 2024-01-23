@@ -16,7 +16,9 @@ body {
   margin: 0 auto;
 }
 .contenedor h1 {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   text-align: center;
   margin: 12px 0;
 }
@@ -26,10 +28,17 @@ body {
 ******************/
 header {
   padding: 30px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   position: relative;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 header .logo {
   max-width: 100%;
@@ -39,8 +48,13 @@ header .carrito .contenido {
 }
 @media screen and (min-width: 768px) {
   header .carrito:hover .contenido {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     position: absolute;
     right: 0;
     background-color: #ffffff;
@@ -48,17 +62,30 @@ header .carrito .contenido {
     width: 400px;
   }
   header .carrito:hover .contenido section {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     position: relative;
   }
   header .carrito:hover .contenido section article:nth-child(2) {
-    flex-basis: 45%;
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
   }
   header .carrito:hover .contenido section article {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   header .carrito:hover .contenido section article h2 {
     margin-bottom: 10px;
@@ -84,20 +111,34 @@ header .carrito .contenido {
   background-size: cover;
   background-position: center;
   color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 65px 0;
 }
 @media screen and (min-width: 480px) {
   .banner {
-    flex-direction: row;
-    align-items: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     padding: 85px 0;
   }
 }
 .banner article {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 .banner article h1 {
   font-size: 2rem;
@@ -112,13 +153,21 @@ header .carrito .contenido {
 .banner article .buscador {
   background-color: #ffffff;
   color: #a5aead;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 12px;
 }
 .banner article .buscador input {
-  flex-basis: 80%;
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
 }
 @media screen and (min-width: 768px) {
   .banner article .buscador {
@@ -135,12 +184,18 @@ header .carrito .contenido {
 ******************/
 .menu {
   background: #741d51;
+  background: -webkit-gradient(linear, left top, right top, from(#741d51), to(#e14d51));
   background: linear-gradient(90deg, #741d51 0%, #e14d51 100%);
   font-size: smaller;
 }
 .menu section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 @media screen and (min-width: 480px) {
   .menu section {
@@ -150,24 +205,42 @@ header .carrito .contenido {
 @media screen and (min-width: 768px) {
   .menu section {
     font-size: 1rem;
-    flex-direction: row;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 .menu section article {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   padding: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: #ffffff;
 }
 .menu section article img {
   width: 28px;
 }
 .menu section article p {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   text-align: center;
   line-height: 20px;
 }
@@ -176,15 +249,28 @@ header .carrito .contenido {
       MAIN
 ******************/
 main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 @media screen and (min-width: 280px) {
   main {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 main section {
@@ -196,25 +282,33 @@ main section img {
 }
 @media screen and (min-width: 280px) {
   main section {
-    flex-basis: calc(50% - 16px);
+    -ms-flex-preferred-size: calc(50% - 16px);
+        flex-basis: calc(50% - 16px);
     font-size: 0.8em;
   }
 }
 @media screen and (min-width: 480px) {
   main section {
-    flex-basis: calc(33% - 16px);
+    -ms-flex-preferred-size: calc(33% - 16px);
+        flex-basis: calc(33% - 16px);
     font-size: 1em;
   }
 }
 @media screen and (min-width: 768px) {
   main section {
-    flex-basis: calc(25% - 16px);
+    -ms-flex-preferred-size: calc(25% - 16px);
+        flex-basis: calc(25% - 16px);
   }
 }
 main section article {
   padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 main section article h1 {
   font-weight: 900;
@@ -255,19 +349,28 @@ footer {
 footer div {
   padding: 25px 0;
   color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 footer div ul {
   font-size: x-small;
   list-style: none;
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   line-height: 15px;
 }
 @media screen and (min-width: 768px) {
   footer div ul {
     font-size: 1rem;
     line-height: 22px;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
   }
 }/*# sourceMappingURL=main.css.map */
