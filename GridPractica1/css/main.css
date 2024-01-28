@@ -9,9 +9,7 @@ main {
   display: grid;
   padding: 10px 15px;
   gap: 10px 15px;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
+  align-items: start;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 main article {
