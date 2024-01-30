@@ -9,3 +9,10 @@
     @content;
   }
 }
+
+@mixin boton($bg-color, $font-color, $border-color) {
+  padding: var(--padding);
+  background-color: $bg-color;
+  border: 1px solid $border-color;
+  color: $font-color;
+}

@@ -15,7 +15,6 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
   text-decoration: none;
   list-style: none;
   font-family: Arial, Helvetica, sans-serif;
@@ -46,7 +45,7 @@ header {
     @include escritorio {
       grid-template-columns: 30% auto 30%;
 
-      div {
+      img {
         grid-column: 1/2;
       }
 
@@ -55,25 +54,21 @@ header {
       }
     }
 
-    div {
+    img {
       justify-self: center;
-
-      // img {
-      //   width: 100%;
-      // }
     }
 
     ul {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); // autofill
 
+
+
       li {
         display: grid;
-        align-items: center;
-        justify-items: center;
 
         &:hover {
-          background-color: red;
+          background-color: var(--oscuro);
         }
 
         a {
@@ -90,8 +85,10 @@ header {
   grid-template-columns: 1fr;
   align-items: center;
   padding: var(--paddingt) 0;
+
   @include escritorio {
     grid-template-columns: repeat(2, 1fr);
+
     img {
       grid-column: 1/2;
     }
@@ -99,9 +96,11 @@ header {
 
   .nosotros-texto {
     padding: var(--padding);
+
     h1 {
       text-align: center;
       padding-bottom: 10px;
+
       @include escritorio {
         text-align: left;
       }
@@ -114,85 +113,110 @@ header {
 }
 
 main {
+  padding: var(--padding) 0;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 10px;
-  column-gap: 10px;
-  padding-bottom: 15px;
-  @include escritorio {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  h1 {
-    grid-column: 1/3;
-  }
-  img {
-    width: 100%;
+  row-gap: 15px;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 15px;
+
+    h1 {
+      grid-column: 1/3;
+    }
   }
 
-  .casa1 {
-    grid-column: 1/3;
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .destacado {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
     @include tablet {
-      display: grid;
-      //  column-gap: var(--padding);
+      grid-template-columns: repeat(2, 1fr);
+      grid-column: 1/3;
+
       img {
         grid-column: 1/2;
       }
 
-      .casa-descripcion {
-        // TODO OJO CON ESTO
-        display: grid;
-        align-items: flex-start;
+      .destacado-descripcion {
         grid-column: 2/3;
       }
     }
 
     @include escritorio {
       grid-column: 1/3;
+
+      img {
+        grid-column: 1/2;
+      }
+
+      .destacado-descripcion {
+        grid-column: 2/3;
+      }
+    }
+
+    .destacado-descripcion {
+      display: grid;
+      border: 2px solid #333030;
+      padding: var(--padding);
+
+      p {
+        grid-column: 1/2;
+      }
+
+    }
+
+  }
+
+  .precio {
+    font-size: 15px;
+    font-weight: bold;
+
+    span {
+      text-decoration: underline;
+      color: var(--primario);
+    }
+  }
+
+  .boton {
+    grid-column: 1/2;
+    @include boton(var(--primario), var(--claro), var(--primario));
+
+    &:hover {
+      transition: 0.6s;
+      @include boton(var(--claro), var(--primario), var(--primario));
     }
   }
 
   article {
     display: grid;
-    align-items: start;
-    img {
-    }
+
     .casa-descripcion {
-      padding: var(--padding) 10px;
-      border: 1px var(--negro) solid;
+      padding: var(--padding);
       display: grid;
-      background-color: var(--claro);
+      align-items: start;
+
+      border: 2px solid #333030;
+
       h1 {
-        // padding: 0 5px;
+        padding-bottom: 10px;
       }
+
       p {
-        margin: 15px 0;
-        grid-row: 2/3;
+        grid-column: 1/2;
       }
+
       .precio {
-        grid-row: 3/4;
-        span {
-          color: var(--primario);
-          text-decoration: underline;
-        }
-      }
-      .boton {
-        grid-row: 4/5;
-        color: var(--claro);
-        background-color: var(--primario);
-        padding: var(--padding);
-        border: 1px solid var(--primario);
-        &:hover {
-          transition: 0.6s;
-          background-color: var(--claro);
-          color: var(--primario);
-          border: 1px solid var(--primario);
-        }
+        padding: 15px 0;
       }
     }
   }
 }
+
+
 
 footer {
   background-color: var(--primario);
@@ -207,6 +231,7 @@ footer {
     display: grid;
     column-gap: var(--padding);
     padding: 10px;
+
     @include escritorio {
       grid-template-columns: 30% 20% 2fr;
     }
@@ -221,9 +246,11 @@ footer {
       @include escritorio {
         grid-column: 2/3;
       }
+
       ul {
         li {
           margin-bottom: 10px;
+
           a {
             color: var(--claro);
           }
@@ -240,15 +267,12 @@ footer {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         row-gap: 10px;
+
         article {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           align-items: center;
           column-gap: 10px;
-
-          div {
-            // background-color: #000000;
-          }
         }
       }
     }

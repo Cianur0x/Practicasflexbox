@@ -12,8 +12,6 @@
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   text-decoration: none;
   list-style: none;
   font-family: Arial, Helvetica, sans-serif;
@@ -44,14 +42,14 @@ header .navegacion {
   header .navegacion {
     grid-template-columns: 30% auto 30%;
   }
-  header .navegacion div {
+  header .navegacion img {
     grid-column: 1/2;
   }
   header .navegacion ul {
     grid-column: 3/4;
   }
 }
-header .navegacion div {
+header .navegacion img {
   justify-self: center;
 }
 header .navegacion ul {
@@ -60,13 +58,9 @@ header .navegacion ul {
 }
 header .navegacion ul li {
   display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  justify-items: center;
 }
 header .navegacion ul li:hover {
-  background-color: red;
+  background-color: var(--oscuro);
 }
 header .navegacion ul li a {
   color: var(--claro);
@@ -75,9 +69,7 @@ header .navegacion ul li a {
 .sobre-nosotros {
   display: grid;
   grid-template-columns: 1fr;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: var(--paddingt) 0;
 }
 @media screen and (min-width: 700px) {
@@ -105,86 +97,97 @@ header .navegacion ul li a {
 }
 
 main {
+  padding: var(--padding) 0;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 10px;
-  -webkit-column-gap: 10px;
-     -moz-column-gap: 10px;
-          column-gap: 10px;
-  padding-bottom: 15px;
+  row-gap: 15px;
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 480px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 15px;
+  }
+  main h1 {
+    grid-column: 1/3;
+  }
+}
+@media screen and (min-width: 480px) {
   main {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-main h1 {
-  grid-column: 1/3;
-}
-main img {
-  width: 100%;
-}
-main .casa1 {
-  grid-column: 1/3;
+main .destacado {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
 }
 @media screen and (min-width: 480px) {
-  main .casa1 {
-    display: grid;
+  main .destacado {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: 1/3;
   }
-  main .casa1 img {
+  main .destacado img {
     grid-column: 1/2;
   }
-  main .casa1 .casa-descripcion {
-    display: grid;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+  main .destacado .destacado-descripcion {
     grid-column: 2/3;
   }
 }
 @media screen and (min-width: 700px) {
-  main .casa1 {
+  main .destacado {
     grid-column: 1/3;
   }
+  main .destacado img {
+    grid-column: 1/2;
+  }
+  main .destacado .destacado-descripcion {
+    grid-column: 2/3;
+  }
+}
+main .destacado .destacado-descripcion {
+  display: grid;
+  border: 2px solid #333030;
+  padding: var(--padding);
+}
+main .destacado .destacado-descripcion p {
+  grid-column: 1/2;
+}
+main .precio {
+  font-size: 15px;
+  font-weight: bold;
+}
+main .precio span {
+  text-decoration: underline;
+  color: var(--primario);
+}
+main .boton {
+  grid-column: 1/2;
+  padding: var(--padding);
+  background-color: var(--primario);
+  border: 1px solid var(--primario);
+  color: var(--claro);
+}
+main .boton:hover {
+  transition: 0.6s;
+  padding: var(--padding);
+  background-color: var(--claro);
+  border: 1px solid var(--primario);
+  color: var(--primario);
 }
 main article {
   display: grid;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
 }
 main article .casa-descripcion {
-  padding: var(--padding) 10px;
-  border: 1px var(--negro) solid;
+  padding: var(--padding);
   display: grid;
-  background-color: var(--claro);
+  align-items: start;
+  border: 2px solid #333030;
+}
+main article .casa-descripcion h1 {
+  padding-bottom: 10px;
 }
 main article .casa-descripcion p {
-  margin: 15px 0;
-  grid-row: 2/3;
+  grid-column: 1/2;
 }
 main article .casa-descripcion .precio {
-  grid-row: 3/4;
-}
-main article .casa-descripcion .precio span {
-  color: var(--primario);
-  text-decoration: underline;
-}
-main article .casa-descripcion .boton {
-  grid-row: 4/5;
-  color: var(--claro);
-  background-color: var(--primario);
-  padding: var(--padding);
-  border: 1px solid var(--primario);
-}
-main article .casa-descripcion .boton:hover {
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
-  background-color: var(--claro);
-  color: var(--primario);
-  border: 1px solid var(--primario);
+  padding: 15px 0;
 }
 
 footer {
@@ -197,9 +200,7 @@ footer h2 {
 footer .footer-contenido {
   padding: var(--padding) 0;
   display: grid;
-  -webkit-column-gap: var(--padding);
-     -moz-column-gap: var(--padding);
-          column-gap: var(--padding);
+  column-gap: var(--padding);
   padding: 10px;
 }
 @media screen and (min-width: 700px) {
@@ -236,12 +237,8 @@ footer .footer-contenido .casas-venta .casas {
 footer .footer-contenido .casas-venta .casas article {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-gap: 10px;
-     -moz-column-gap: 10px;
-          column-gap: 10px;
+  align-items: center;
+  column-gap: 10px;
 }
 footer .derechos {
   display: grid;
