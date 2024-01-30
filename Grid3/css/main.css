@@ -12,7 +12,8 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   text-decoration: none;
   list-style: none;
   font-family: Arial, Helvetica, sans-serif;
@@ -53,16 +54,15 @@ header .navegacion {
 header .navegacion div {
   justify-self: center;
 }
-header .navegacion div img {
-  width: 100%;
-}
 header .navegacion ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 header .navegacion ul li {
   display: grid;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   justify-items: center;
 }
 header .navegacion ul li:hover {
@@ -77,17 +77,19 @@ header .navegacion ul li a {
   grid-template-columns: 1fr;
   justify-items: center;
 }
-.sobre-nosotros div img {
-  max-width: 100%;
-}
 main {
   display: grid;
   grid-template-columns: 50% 1fr;
   row-gap: 10px;
-  column-gap: 10px;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
 }
 main h1 {
   grid-column: 1/3;
+}
+main article {
+  background-color: purple;
 }
 main .casa1 {
   grid-column: 1/3;
@@ -103,24 +105,57 @@ main .casa1 div {
 footer {
   background-color: var(--primario);
   color: var(--claro);
-  display: grid;
-  row-gap: 10px;
 }
-footer .navegacion a {
+footer h2 {
+  padding: 10px 0;
+}
+footer .footer-contenido {
+  padding: var(--padding) 0;
+  display: grid;
+}
+@media screen and (min-width: 700px) {
+  footer .footer-contenido {
+    grid-template-columns: 30% 20% 2fr;
+  }
+}
+@media screen and (min-width: 700px) {
+  footer .footer-contenido .nosotros {
+    grid-column: 1/2;
+  }
+}
+@media screen and (min-width: 700px) {
+  footer .footer-contenido .navegacion {
+    grid-column: 2/3;
+  }
+}
+footer .footer-contenido .navegacion a {
   color: var(--claro);
 }
-footer .casas-venta {
-  display: grid;
+@media screen and (min-width: 700px) {
+  footer .footer-contenido .casas-venta {
+    grid-column: 3/4;
+  }
 }
-footer .casas-venta div {
+footer .footer-contenido .casas-venta .casas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
-footer .casas-venta div article {
+footer .footer-contenido .casas-venta .casas article {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: var(--paddingt);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+}
+footer .footer-contenido .casas-venta .casas article div {
+  background-color: #000000;
 }
 footer .derechos {
+  display: grid;
   background-color: var(--oscuro);
+  justify-items: center;
+  padding: var(--padding) 0;
 }/*# sourceMappingURL=main.css.map */
