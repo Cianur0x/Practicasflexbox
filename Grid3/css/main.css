@@ -126,6 +126,8 @@ main img {
 }
 main .casa1 {
   grid-column: 1/3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 @media screen and (min-width: 480px) {
   main .casa1 {
@@ -149,6 +151,9 @@ main .casa1 {
 }
 main article {
   display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
 }
 main article .casa-descripcion {
   padding: var(--padding) 10px;
