@@ -60,19 +60,19 @@ header {
 
     ul {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); // autofill
-
-
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 
       li {
         display: grid;
+        // El alineamiento hace que no salga el pointer en todo el li, no sé cómo solucionarlo
+        align-items: center;
+        justify-items: center;
 
         &:hover {
           background-color: var(--oscuro);
         }
 
         a {
-          // TODO salga potinter en todo el nav
           color: var(--claro);
         }
       }
@@ -126,7 +126,7 @@ main {
     }
   }
 
-  @include tablet {
+  @include escritorio {
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -160,6 +160,7 @@ main {
 
     .destacado-descripcion {
       display: grid;
+      align-items: start;
       border: 2px solid #333030;
       padding: var(--padding);
 
@@ -193,6 +194,7 @@ main {
 
   article {
     display: grid;
+    align-content: start;
 
     .casa-descripcion {
       padding: var(--padding);
