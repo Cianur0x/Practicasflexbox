@@ -135,6 +135,10 @@ main .casa1 {
     grid-column: 1/2;
   }
   main .casa1 .casa-descripcion {
+    display: grid;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     grid-column: 2/3;
   }
 }

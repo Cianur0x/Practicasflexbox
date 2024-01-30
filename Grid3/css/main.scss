@@ -140,6 +140,9 @@ main {
       }
 
       .casa-descripcion {
+        // TODO OJO CON ESTO
+        display: grid;
+        align-items: flex-start;
         grid-column: 2/3;
       }
     }
