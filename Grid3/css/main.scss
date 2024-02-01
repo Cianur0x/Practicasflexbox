@@ -115,8 +115,9 @@ header {
 }
 
 main {
-  padding: var(--padding) 0;
+  padding-bottom: var(--padding);
   display: grid;
+
   row-gap: 15px;
   column-gap: 15px;
   grid-template-columns: repeat(2, 1fr);
@@ -140,7 +141,7 @@ main {
 
     .destacado-descripcion {
       display: grid;
-      align-items: start;
+      align-items: start; // ocupa todo el contenedor
       border: 2px solid #333030;
       padding: var(--padding);
     }
@@ -167,19 +168,15 @@ main {
 
   article {
     display: grid;
-    // align-self: start;
+    align-self: start; // TODO ver que pasa si quitas esto xd
 
     .casa-descripcion {
       padding: var(--padding);
-      display: grid;
+      display: grid; // Hace que se ensanchen los botones
       border: 2px solid #333030;
 
       h1 {
         padding-bottom: 10px;
-      }
-
-      p {
-        grid-column: 1/2;
       }
 
       .precio {
@@ -204,24 +201,14 @@ footer {
     padding: 10px;
 
     @include escritorio {
+      // no hace falta decir que cols ocupa puesto que se colocan solos los contenedores
       grid-template-columns: 30% 20% 2fr;
     }
 
-    .nosotros {
-      @include escritorio {
-        grid-column: 1/2;
-      }
-    }
-
     .navegacion {
-      @include escritorio {
-        grid-column: 2/3;
-      }
-
       ul {
         li {
           margin-bottom: 10px;
-
           a {
             color: var(--claro);
           }
@@ -236,10 +223,14 @@ footer {
 
       .casas {
         display: grid;
+        // para cada hijo del contenedor casas, osea los articulos dentro,
+        // se dividiran en 200px minimo cada uno maximo 1fr
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         row-gap: 10px;
 
         article {
+          // contienen la imagen y la descripcion de la casa
+          // se divide en dos columnas que ocupan la mitad cada una
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           align-items: center;
