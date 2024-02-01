@@ -168,7 +168,7 @@ main {
 
   article {
     display: grid;
-    align-self: start; // TODO ver que pasa si quitas esto xd
+    align-self: start; // TODO ver que pasa si quitas esto xd, lo qeu pasa es qeu si no le decimos una alineacion poreparte los hijos en todo lo alto del contenedor
 
     .casa-descripcion {
       padding: var(--padding);
