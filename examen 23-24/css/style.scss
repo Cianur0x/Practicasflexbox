@@ -1,0 +1,159 @@
+@import 'variables';
+@import 'mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-style: $fuente;
+}
+
+h1 {
+    font-size: $tamano_h1;
+}
+
+h2 {
+    font-size: $tamano_h3;
+}
+
+h3 {
+    font-size: $tamano_h3;
+}
+
+p {
+    font-size: $tamano_p;
+}
+
+i {
+    font-size: $tamano_i;
+}
+
+img {
+    width: 100%;
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+header {
+    /* el enlace de la imagen de fondo lo tenéis en las variables */
+    background-image: $bg_header;
+    background-repeat: no-repeat;
+    min-height: 24rem;
+    background-size: cover;
+    background-position: center center;
+    display: grid;
+    align-items: center;
+
+    .contenido {
+        display: grid;
+        background-color: rebeccapurple;
+        justify-items: center;
+
+        .titulo {
+            text-align: center;
+
+            @include tablet() {
+                text-align: unset;
+            }
+        }
+
+        @include tablet() {
+            justify-items: left;
+
+            .titulo {
+                text-align: unset;
+            }
+        }
+
+        @include escritorio() {
+            justify-items: right;
+        }
+
+        color: $color_header;
+        // text-align: center; // cuando se hace muy pequeño no se puede poner en el centro del todo
+    }
+}
+
+nav {
+    background-color: $bg_nav;
+
+    .menu {
+        display: grid;
+        //justify-items: center; en el momento en el qeu se justifica se coge solo la anchura del elemento 
+        text-align: center;
+
+        @include tablet() {
+            grid-template-columns: repeat(auto-fiLL, minmax(200px, 1fr));
+        }
+
+        li {
+            display: grid; // por alguna razon ensahncha
+            border: 1px white solid;
+
+            &:hover {
+                background-color: blue;
+            }
+
+            position: relative;
+
+            @include tablet() {
+                &:hover {
+                    background-color: blue;
+
+                    ul {
+                        display: block;
+                        width: 100%;
+                        top: 100%;
+                        background-color: red;
+                    }
+                }
+            }
+
+            a {
+                color: $color_header;
+                padding: 10px;
+
+                i {}
+            }
+
+            ul {
+                @include tablet() {
+                    position: absolute;
+                    display: none;
+                }
+
+                li {
+                    &:hover {
+                        background-color: chartreuse;
+                    }
+
+                    a {
+                        color: aqua;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+footer {
+    /* el enlace de la imagen de fondo lo tenéis en las variables */
+    background-image: $bg_image_footer;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin-top: 3rem;
+    padding: 2rem 0;
+    min-height: 20rem;
+}

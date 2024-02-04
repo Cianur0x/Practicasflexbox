@@ -26,6 +26,7 @@ body {
 header {
   display: grid;
   grid-template-columns: 1fr; // es una sola columna y el elemento lo alinea a la izquierda
+
   img {
     max-width: 100%; // serviria poniendo solo con max-width, no hari falta el display column
   }
@@ -34,21 +35,26 @@ header {
 nav {
   background-color: $bg-color;
   margin: $spacing2 0;
+
   ul {
     display: grid;
-    // hueco que queda qeuda libre, es auto-fill SIEMPRE VA A IR EN LOS ARTICULOS, el divide,
+    // hueco que queda libre, es auto-fill SIEMPRE VA A IR EN LOS ARTICULOS, el divide,
     // ocupa todo aunque el espacio o contenido sea menor
     // que el hueco se rellene es auto-fit
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
     li {
       // para que el li ocupe todo, entonces el a pontiner saldra en todo el bloque
       display: grid; // para que crezca el hijo y se rellene el espacio
+
       &:hover {
         background-color: $verde-color;
+
         a {
           color: black;
         }
       }
+
       a {
         padding: $spacing2;
         color: $font-color;
@@ -67,21 +73,19 @@ main {
   section {
     display: grid;
     // justify-items: center;
-    grid-template-columns: 1fr; // los hijos s emten cad auno en usus huecos sin hacer nada(uno debajo de otro
-    // solo en todo caso se deberi indicar la alineacion de los objetos)
+    grid-template-columns: 1fr; // los hijos se meten cada uno en sus huecos sin hacer nada(uno debajo de otro
+    // solo en todo caso se deberia indicar la alineacion de los objetos)
 
     @include mediaQuery {
       // align-items: center;
       // crea 3 columnas y 4 filas
-      grid-template-columns: minmax(10px, max-content) auto minmax(
-          100px,
-          max-content
-        );
+      grid-template-columns: minmax(10px, max-content) auto minmax(100px,
+          max-content);
       grid-template-rows: repeat(4, auto);
       column-gap: $spacing2;
 
       h1 {
-        grid-row: 1/2; // no hrai falta pornerlo pq ya ets aen su fila, los demás sí
+        grid-row: 1/2; // no haria falta pornerlo pq ya esta en su fila, los demás sí
         grid-column: 1/4;
       }
 
@@ -114,6 +118,7 @@ main {
       // justify-self: normal; // se achica como si fuera una torre si no ponemos esto
       // align-self: normal; // aling self se apalsta si no le ponemos esto
       margin: $spacing2 0;
+
       li {
         text-align: center;
         // margin: $spacing1 0;
@@ -132,6 +137,7 @@ main {
         margin: $spacing1 10px;
         text-align: justify;
       }
+
       .especial {
         margin: 0 4rem;
         font-size: larger;
@@ -142,6 +148,7 @@ main {
 
   ul {
     background-color: $verde-color;
+
     li {
       a {
         font-size: large;
@@ -163,13 +170,16 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     padding: $spacing1 0;
+
     ul {
       li {
         text-align: center;
         padding: 3px 0;
+
         h4 {
           margin: $spacing2 0;
         }
+
         a {
           color: $enlaces-footer;
           text-transform: uppercase;

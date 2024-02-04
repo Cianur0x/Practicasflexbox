@@ -1,0 +1,23 @@
+/****************** MIXINS ***********************/
+
+@mixin escritorio {
+  @media screen and (min-width: #{$escritorio}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin boton($bg_color, $text_color) {
+  background-color: $bg_color;
+  color: $text_color;
+  padding: 15px 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: #{$sombra};
+  font-family: #{$fuenteBoton};
+}
