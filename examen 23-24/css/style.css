@@ -93,31 +93,12 @@ nav .menu {
 }
 @media screen and (min-width: 762px) {
   nav .menu {
-    grid-template-columns: repeat(auto-fiLL, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
 nav .menu li {
   display: grid;
-  border: 1px white solid;
   position: relative;
-}
-nav .menu li:hover {
-  background-color: blue;
-}
-@media screen and (min-width: 762px) {
-  nav .menu li:hover {
-    background-color: blue;
-  }
-  nav .menu li:hover ul {
-    display: block;
-    width: 100%;
-    top: 100%;
-    background-color: red;
-  }
-}
-nav .menu li a {
-  color: #ffffff;
-  padding: 10px;
 }
 @media screen and (min-width: 762px) {
   nav .menu li ul {
@@ -125,11 +106,18 @@ nav .menu li a {
     display: none;
   }
 }
-nav .menu li ul li:hover {
-  background-color: chartreuse;
+nav .menu li:hover {
+  background-color: rgba(255, 204, 204, 0.445);
 }
-nav .menu li ul li a {
-  color: aqua;
+nav .menu li:hover:hover ul {
+  display: block;
+  width: 100%;
+  top: 100%;
+  background-color: black;
+}
+nav .menu li a {
+  padding: 10px;
+  color: #ffffff;
 }
 
 footer {

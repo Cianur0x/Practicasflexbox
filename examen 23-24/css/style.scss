@@ -87,58 +87,42 @@ nav {
 
     .menu {
         display: grid;
-        //justify-items: center; en el momento en el qeu se justifica se coge solo la anchura del elemento 
-        text-align: center;
+        // justify-items: center; // justificacion hecha con text-aling
+        text-align: center; // para que la casita se vea en el centro
+        // en el momento en el qeu se justifica se coge solo la anchura del elemento text-align: center;
 
         @include tablet() {
-            grid-template-columns: repeat(auto-fiLL, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         }
 
         li {
-            display: grid; // por alguna razon ensahncha
-            border: 1px white solid;
-
-            &:hover {
-                background-color: blue;
-            }
-
+            display: grid; // hace que el pinter salga en todo
             position: relative;
-
-            @include tablet() {
-                &:hover {
-                    background-color: blue;
-
-                    ul {
-                        display: block;
-                        width: 100%;
-                        top: 100%;
-                        background-color: red;
-                    }
-                }
-            }
-
-            a {
-                color: $color_header;
-                padding: 10px;
-
-                i {}
-            }
 
             ul {
                 @include tablet() {
                     position: absolute;
                     display: none;
                 }
+            }
 
-                li {
-                    &:hover {
-                        background-color: chartreuse;
-                    }
+            &:hover {
+                background-color: rgba(255, 204, 204, 0.445);
 
-                    a {
-                        color: aqua;
+                &:hover {
+                    ul {
+                        display: block;
+                        width: 100%;
+                        top: 100%;
+                        // left: 0; // esto es en caso de que le ponga padding 
+                        background-color: $bg_nav;
                     }
                 }
+            }
+
+            a {
+                padding: 10px;
+                color: $color_header;
             }
         }
     }
