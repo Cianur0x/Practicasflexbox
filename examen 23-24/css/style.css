@@ -38,7 +38,7 @@ i {
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
 }
 
 .contenedor {
@@ -54,9 +54,7 @@ header {
   background-size: cover;
   background-position: center center;
   display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 header .contenido {
   display: grid;
@@ -95,12 +93,12 @@ nav .menu {
 }
 @media screen and (min-width: 762px) {
   nav .menu {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     text-align: unset;
-    justify-items: start;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  nav .menu li:last-child {
-    justify-self: end;
+    /*
+    * HACER ESTO EN CASO DE QUE SE PIDA DOLO DOS HIJOS EN NAV GRID,
+    * UN LADO A UNO OTRO LADO A OTRO 
+    */
   }
 }
 nav .menu li {
@@ -116,7 +114,7 @@ nav .menu li {
 nav .menu li:hover {
   background-color: rgba(255, 204, 204, 0.445);
 }
-nav .menu li:hover:hover ul {
+nav .menu li:hover ul {
   display: block;
   width: 100%;
   top: 100%;
@@ -130,41 +128,40 @@ nav .menu li a {
 .principal {
   background-color: aliceblue;
   padding: 0 15px;
+  justify-items: start;
+  display: grid;
 }
 .principal .mainYaside {
   display: grid;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
-  -webkit-column-gap: 25px;
-     -moz-column-gap: 25px;
-          column-gap: 25px;
+  align-items: start;
+  column-gap: 25px;
 }
 @media screen and (min-width: 1024px) {
   .principal .mainYaside {
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 75% calc(25% - 25px);
   }
 }
 .principal .mainYaside main {
   display: grid;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
+  align-items: start;
   row-gap: 10px;
-  -webkit-column-gap: 10px;
-     -moz-column-gap: 10px;
-          column-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  column-gap: 10px;
 }
 @media screen and (min-width: 762px) {
-  .principal .mainYaside main .destacado {
+  .principal .mainYaside main {
     grid-template-columns: repeat(2, 1fr);
-    grid-column: 1/2;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .principal .mainYaside main {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media screen and (min-width: 762px) {
   .principal .mainYaside main .destacado {
+    grid-template-columns: repeat(2, 1fr);
     grid-column: 1/3;
+    grid-row: 1/2;
   }
 }
 .principal .mainYaside main .destacado div {
@@ -172,19 +169,20 @@ nav .menu li a {
 }
 .principal .mainYaside main article {
   display: grid;
-  -webkit-box-shadow: 5px 5px 5px gray;
-          box-shadow: 5px 5px 5px gray;
+  box-shadow: 5px 5px 5px gray;
 }
 .principal .mainYaside main article div {
   padding: 15px;
   display: grid;
   justify-items: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
+  align-items: start;
 }
 .principal .mainYaside main article div h3 {
   padding: 15px 0;
+}
+.principal .mainYaside main article div p {
+  text-align: center;
+  margin: 10px 0;
 }
 .principal .mainYaside main article div .boton {
   padding: 15px;
@@ -192,7 +190,11 @@ nav .menu li a {
   font-family: "Oswald", sans-serif;
   background-color: #455A64;
 }
+.principal .mainYaside main article div .boton:hover {
+  background-color: #536DFE;
+}
 .principal .mainYaside aside {
+  box-shadow: 5px 5px 5px gray;
   grid-row: 1/2;
   display: grid;
 }
@@ -200,6 +202,28 @@ nav .menu li a {
   .principal .mainYaside aside {
     grid-column: 2/3;
   }
+}
+.principal .mainYaside aside h2 {
+  text-align: center;
+}
+.principal .mainYaside aside a {
+  margin: 5px 0;
+  color: black;
+}
+.principal h2 {
+  margin-top: 15px;
+}
+.principal p {
+  margin: 20px 0;
+}
+.principal .boton2 {
+  padding: 15px;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  background-color: #536DFE;
+}
+.principal .boton2:hover {
+  background-color: #455A64;
 }
 
 footer {

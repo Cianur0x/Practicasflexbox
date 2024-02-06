@@ -12,3 +12,9 @@
     }
 }
 
+@mixin boton($color-primario, $fuente) {
+    padding: 15px;
+    color: white;
+    font-family: $fuente;
+    background-color: $color-primario;
+}
