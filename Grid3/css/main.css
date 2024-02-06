@@ -56,7 +56,9 @@ header .navegacion ul {
 }
 header .navegacion ul li {
   display: grid;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   justify-items: center;
 }
 header .navegacion ul li:hover {
@@ -69,7 +71,9 @@ header .navegacion ul li a {
 .sobre-nosotros {
   display: grid;
   grid-template-columns: 1fr;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   justify-items: center;
   padding: var(--paddingt) 0;
 }
@@ -101,7 +105,9 @@ main {
   padding-bottom: var(--padding);
   display: grid;
   row-gap: 15px;
-  column-gap: 15px;
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px;
   grid-template-columns: repeat(2, 1fr);
 }
 main img {
@@ -123,7 +129,9 @@ main .destacado {
 }
 main .destacado .destacado-descripcion {
   display: grid;
-  align-items: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   border: 2px solid #333030;
   padding: var(--padding);
 }
@@ -142,6 +150,7 @@ main .boton {
   color: var(--claro);
 }
 main .boton:hover {
+  -webkit-transition: 0.6s;
   transition: 0.6s;
   padding: var(--padding);
   background-color: var(--claro);
@@ -174,7 +183,9 @@ footer h2 {
 footer .footer-contenido {
   padding: var(--padding) 0;
   display: grid;
-  column-gap: var(--padding);
+  -webkit-column-gap: var(--padding);
+     -moz-column-gap: var(--padding);
+          column-gap: var(--padding);
   padding: 10px;
 }
 @media screen and (min-width: 700px) {
@@ -201,8 +212,12 @@ footer .footer-contenido .casas-venta .casas {
 footer .footer-contenido .casas-venta .casas article {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  column-gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
 }
 footer .derechos {
   display: grid;

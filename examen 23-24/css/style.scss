@@ -2,142 +2,217 @@
 @import 'mixins';
 
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
 }
 
 body {
-    font-style: $fuente;
+  font-style: $fuente;
 }
 
 h1 {
-    font-size: $tamano_h1;
+  font-size: $tamano_h1;
 }
 
 h2 {
-    font-size: $tamano_h3;
+  font-size: $tamano_h3;
 }
 
 h3 {
-    font-size: $tamano_h3;
+  font-size: $tamano_h3;
 }
 
 p {
-    font-size: $tamano_p;
+  font-size: $tamano_p;
 }
 
 i {
-    font-size: $tamano_i;
+  font-size: $tamano_i;
 }
 
 img {
-    width: 100%;
+  width: 100%;
 }
 
 .contenedor {
-    max-width: 1100px;
-    margin: 0 auto;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-
 header {
-    /* el enlace de la imagen de fondo lo tenéis en las variables */
-    background-image: $bg_header;
-    background-repeat: no-repeat;
-    min-height: 24rem;
-    background-size: cover;
-    background-position: center center;
+  /* el enlace de la imagen de fondo lo tenéis en las variables */
+  background-image: $bg_header;
+  background-repeat: no-repeat;
+  min-height: 24rem;
+  background-size: cover;
+  background-position: center center;
+  display: grid;
+  align-items: center;
+
+  .contenido {
     display: grid;
-    align-items: center;
+    background-color: rebeccapurple;
+    justify-items: center;
 
-    .contenido {
-        display: grid;
-        background-color: rebeccapurple;
-        justify-items: center;
+    .titulo {
+      text-align: center;
 
-        .titulo {
-            text-align: center;
-
-            @include tablet() {
-                text-align: unset;
-            }
-        }
-
-        @include tablet() {
-            justify-items: left;
-
-            .titulo {
-                text-align: unset;
-            }
-        }
-
-        @include escritorio() {
-            justify-items: right;
-        }
-
-        color: $color_header;
-        // text-align: center; // cuando se hace muy pequeño no se puede poner en el centro del todo
+      @include tablet() {
+        text-align: unset;
+      }
     }
+
+    @include tablet() {
+      justify-items: left;
+
+      .titulo {
+        text-align: unset;
+      }
+    }
+
+    @include escritorio() {
+      justify-items: right;
+    }
+
+    color: $color_header;
+    // text-align: center; // cuando se hace muy pequeño no se puede poner en el centro del todo
+  }
 }
 
 nav {
-    background-color: $bg_nav;
+  background-color: $bg_nav;
 
-    .menu {
-        display: grid;
-        // justify-items: center; // justificacion hecha con text-aling
-        text-align: center; // para que la casita se vea en el centro
-        // en el momento en el qeu se justifica se coge solo la anchura del elemento text-align: center;
+  .menu {
+    display: grid;
+    // justificacion hecha con text-aling
+    text-align: center; // para que la casita se vea en el centro
+    // en el momento en el qeu se justifica se coge solo la anchura del elemento text-align: center;
 
-        @include tablet() {
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        }
+    @include tablet() {
+      // grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      text-align: unset;
+      justify-items: start;
+      grid-template-columns: repeat(2, 1fr);
 
-        li {
-            display: grid; // hace que el pinter salga en todo
-            position: relative;
-
-            ul {
-                @include tablet() {
-                    position: absolute;
-                    display: none;
-                }
-            }
-
-            &:hover {
-                background-color: rgba(255, 204, 204, 0.445);
-
-                &:hover {
-                    ul {
-                        display: block;
-                        width: 100%;
-                        top: 100%;
-                        // left: 0; // esto es en caso de que le ponga padding 
-                        background-color: $bg_nav;
-                    }
-                }
-            }
-
-            a {
-                padding: 10px;
-                color: $color_header;
-            }
-        }
+      li:last-child {
+        justify-self: end;
+      }
     }
+
+    li {
+      display: grid; // hace que el pinter salga en todo
+      position: relative;
+
+      ul {
+        @include tablet() {
+          position: absolute;
+          display: none;
+        }
+      }
+
+      &:hover {
+        background-color: rgba(255, 204, 204, 0.445);
+
+        &:hover {
+          ul {
+            display: block;
+            width: 100%;
+            top: 100%;
+            // left: 0; // esto es en caso de que le ponga padding
+            background-color: $bg_nav;
+          }
+        }
+      }
+
+      a {
+        padding: 10px;
+        color: $color_header;
+      }
+    }
+  }
 }
 
+.principal {
+  background-color: aliceblue;
+  padding: 0 15px;
+  .mainYaside {
+    display: grid;
+    align-items: start;
+    column-gap: 25px;
 
+    @include escritorio() {
+      grid-template-columns: 75% 25%;
+    }
+    main {
+      display: grid;
+      align-items: start;
+      // justify-items: start;
+      row-gap: 10px;
+      column-gap: 10px;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      // grid-template-columns: repeat(2, 1fr);
 
+      //   @include escritorio() {
+      //     // grid-template-columns: repeat(3, 1fr);
+      //   }
+      .destacado {
+        @include tablet() {
+          grid-template-columns: repeat(2, 1fr);
+          grid-column: 1/2;
+        }
+
+        @include tablet() {
+          grid-column: 1/3;
+        }
+
+        div {
+          background-color: crimson;
+        }
+      }
+
+      article {
+        display: grid;
+        // align-items: start;
+        // justify-items: center;
+
+        box-shadow: $sombra;
+        div {
+          padding: 15px;
+          display: grid;
+          justify-items: center;
+          align-items: start;
+          h3 {
+            padding: 15px 0;
+          }
+          .boton {
+            padding: 15px;
+            color: white;
+            font-family: $fuenteBoton;
+            background-color: $bg_boton1;
+          }
+        }
+      }
+    }
+
+    aside {
+      grid-row: 1/2;
+      @include tablet() {
+        grid-column: 2/3;
+      }
+      display: grid;
+    }
+  }
+}
 
 footer {
-    /* el enlace de la imagen de fondo lo tenéis en las variables */
-    background-image: $bg_image_footer;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    margin-top: 3rem;
-    padding: 2rem 0;
-    min-height: 20rem;
+  /* el enlace de la imagen de fondo lo tenéis en las variables */
+  background-image: $bg_image_footer;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin-top: 3rem;
+  padding: 2rem 0;
+  min-height: 20rem;
 }
