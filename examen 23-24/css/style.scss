@@ -2,302 +2,303 @@
 @import 'mixins';
 
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
 }
 
 body {
-    font-style: $fuente;
+  font-style: $fuente;
 }
 
 h1 {
-    font-size: $tamano_h1;
+  font-size: $tamano_h1;
 }
 
 h2 {
-    font-size: $tamano_h3;
+  font-size: $tamano_h3;
 }
 
 h3 {
-    font-size: $tamano_h3;
+  font-size: $tamano_h3;
 }
 
 p {
-    font-size: $tamano_p;
+  font-size: $tamano_p;
 }
 
 i {
-    font-size: $tamano_i;
+  font-size: $tamano_i;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .contenedor {
-    max-width: 1100px;
-    margin: 0 auto;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 header {
-    /* el enlace de la imagen de fondo lo tenéis en las variables */
-    background-image: $bg_header;
-    background-repeat: no-repeat;
-    min-height: 24rem;
-    background-size: cover;
-    background-position: center center;
+  /* el enlace de la imagen de fondo lo tenéis en las variables */
+  background-image: $bg_header;
+  background-repeat: no-repeat;
+  min-height: 24rem;
+  background-size: cover;
+  background-position: center center;
+  display: grid;
+  align-items: center;
+
+  .contenido {
     display: grid;
-    align-items: center;
+    background-color: rebeccapurple;
+    justify-items: center;
 
-    .contenido {
-        display: grid;
-        background-color: rebeccapurple;
-        justify-items: center;
+    .titulo {
+      text-align: center;
 
-        .titulo {
-            text-align: center;
-
-            @include tablet() {
-                text-align: unset;
-            }
-        }
-
-        @include tablet() {
-            justify-items: left;
-
-            .titulo {
-                text-align: unset;
-            }
-        }
-
-        @include escritorio() {
-            justify-items: right;
-        }
-
-        color: $color_header;
-        // text-align: center; // cuando se hace muy pequeño no se puede poner en el centro del todo
+      @include tablet() {
+        text-align: unset;
+      }
     }
+
+    @include tablet() {
+      justify-items: left;
+
+      .titulo {
+        text-align: unset;
+      }
+    }
+
+    @include escritorio() {
+      justify-items: right;
+    }
+
+    color: $color_header;
+    // text-align: center; // cuando se hace muy pequeño no se puede poner en el centro del todo
+  }
 }
 
 nav {
-    background-color: $bg_nav;
+  background-color: $bg_nav;
 
-    .menu {
-        display: grid;
-        // justificacion hecha con text-aling
-        text-align: center; // para que la casita se vea en el centro
-        // en el momento en el qeu se justifica se coge solo la anchura del elemento text-align: center;
+  .menu {
+    display: grid;
+    // justificacion hecha con text-aling
+    text-align: center; // para que la casita se vea en el centro
+    // en el momento en el qeu se justifica se coge solo la anchura del elemento text-align: center;
 
-        @include tablet() {
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            text-align: unset;
-            /*
+    @include tablet() {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      text-align: unset;
+      /*
             * HACER ESTO EN CASO DE QUE SE PIDA DOLO DOS HIJOS EN NAV GRID,
             * UN LADO A UNO OTRO LADO A OTRO 
             */
-            // justify-items: start;
-            // grid-template-columns: repeat(2, 1fr);
-            // li:last-child {
-            //     justify-self: end;
-            // }
-        }
-
-        li {
-            display: grid; // hace que el pinter salga en todo
-            position: relative;
-
-            ul {
-                @include tablet() {
-                    position: absolute;
-                    display: none;
-                }
-            }
-
-            &:hover {
-                background-color: rgba(255, 204, 204, 0.445);
-
-                ul {
-                    display: block;
-                    width: 100%;
-                    top: 100%;
-                    // left: 0; // esto es en caso de que le ponga padding
-                    background-color: $bg_nav;
-                }
-
-            }
-
-            a {
-                padding: 10px;
-                color: $color_header;
-            }
-        }
+      // justify-items: start;
+      // grid-template-columns: repeat(2, 1fr);
+      // li:last-child {
+      //     justify-self: end;
+      // }
     }
+
+    li {
+      display: grid; // hace que el pinter salga en todo
+      position: relative;
+
+      ul {
+        @include tablet() {
+          position: absolute;
+          display: none;
+        }
+      }
+
+      &:hover {
+        background-color: rgba(255, 204, 204, 0.445);
+
+        ul {
+          display: block;
+          width: 100%;
+          top: 100%;
+          // left: 0; // esto es en caso de que le ponga padding
+          background-color: $bg_nav;
+        }
+      }
+
+      a {
+        padding: 10px;
+        color: $color_header;
+      }
+    }
+  }
 }
 
 .principal {
-    padding: 0 15px;
-    justify-items: start;
+  padding: 0 15px;
+  justify-items: start;
+  display: grid;
+
+  .mainYaside {
     display: grid;
+    align-items: start;
+    column-gap: 25px;
 
-    .mainYaside {
+    @include escritorio() {
+      grid-template-columns: 75% calc(25% - 25px);
+    }
+
+    main {
+      display: grid;
+      align-items: start;
+      // justify-items: start;
+      row-gap: 10px;
+      column-gap: 10px;
+
+      // grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      // grid-template-columns: repeat(2, 1fr);
+      @include tablet() {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include escritorio() {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .destacado {
+        grid-row: 1/2;
+
+        @include tablet() {
+          grid-template-columns: repeat(2, 1fr);
+          grid-column: 1/3;
+        }
+
+        div {
+          //  background-color: crimson;
+        }
+      }
+
+      article {
         display: grid;
-        align-items: start;
-        column-gap: 25px;
+        background-color: aliceblue;
+        // align-items: start;
+        // justify-items: center;
 
-        @include escritorio() {
-            grid-template-columns: 75% calc(25% - 25px);
+        box-shadow: $sombra;
+
+        div {
+          padding: 15px;
+          display: grid;
+          justify-items: center;
+          align-items: start; // esto hace que el contenido de la despccion no se ensanche, ej el boton
+
+          h3 {
+            padding: 15px 0;
+          }
+
+          p {
+            text-align: center;
+            margin: 10px 0;
+          }
+
+          .boton {
+            @include boton($bg_boton1, $fuenteBoton);
+
+            &:hover {
+              transition: 0.5s;
+              background-color: $bg_boton2;
+            }
+          }
         }
-
-        main {
-            display: grid;
-            align-items: start;
-            // justify-items: start;
-            row-gap: 10px;
-            column-gap: 10px;
-
-            // grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            // grid-template-columns: repeat(2, 1fr);
-            @include tablet() {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            @include escritorio() {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .destacado {
-                grid-row: 1/2;
-
-                @include tablet() {
-                    grid-template-columns: repeat(2, 1fr);
-                    grid-column: 1/3;
-                }
-
-                div {
-                    //  background-color: crimson;
-                }
-            }
-
-            article {
-                display: grid;
-                background-color: aliceblue;
-                // align-items: start;
-                // justify-items: center;
-
-                box-shadow: $sombra;
-
-                div {
-                    padding: 15px;
-                    display: grid;
-                    justify-items: center;
-                    align-items: start; // esto hace que el contenido de la despccion no se ensanche, ej el boton
-
-                    h3 {
-                        padding: 15px 0;
-                    }
-
-                    p {
-                        text-align: center;
-                        margin: 10px 0;
-                    }
-
-                    .boton {
-                        @include boton($bg_boton1, $fuenteBoton);
-
-                        &:hover {
-                            background-color: $bg_boton2;
-                        }
-                    }
-                }
-            }
-        }
-
-        aside {
-            background-color: aliceblue;
-            box-shadow: $sombra;
-            grid-row: 1/2;
-
-
-            @include tablet() {
-                grid-column: 2/3;
-            }
-
-            h2 {
-                text-align: center;
-            }
-
-            a {
-                padding: 5px 10px;
-                color: black;
-            }
-
-            display: grid;
-        }
+      }
     }
 
-    h2 {
-        margin-top: 15px;
-    }
+    aside {
+      background-color: aliceblue;
+      box-shadow: $sombra;
+      grid-row: 1/2;
 
-    p {
-        margin: 20px 0;
-    }
+      @include tablet() {
+        grid-column: 2/3;
+      }
 
-    .boton2 {
-        @include boton($bg_boton2, $fuenteBoton);
+      h2 {
+        text-align: center;
+      }
 
-        &:hover {
-            background-color: $bg_boton1;
-        }
+      a {
+        padding: 5px 10px;
+        color: black;
+      }
+
+      display: grid;
     }
+  }
+
+  h2 {
+    margin-top: 15px;
+  }
+
+  p {
+    margin: 20px 0;
+  }
+
+  .boton2 {
+    @include boton($bg_boton2, $fuenteBoton);
+
+    &:hover {
+      background-color: $bg_boton1;
+    }
+  }
 }
 
 footer {
-    /* el enlace de la imagen de fondo lo tenéis en las variables */
-    background-image: $bg_image_footer;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    margin-top: 3rem;
-    padding: 2rem 0;
+  /* el enlace de la imagen de fondo lo tenéis en las variables */
+  background-image: $bg_image_footer;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin-top: 3rem;
+  padding: 2rem 0;
 
-    .footer {
-        padding: 0 20px;
-        display: grid;
-        row-gap: 15px;
-        color: white;
+  .footer {
+    padding: 0 20px;
+    display: grid;
+    row-gap: 15px;
+    color: white;
 
-        @include tablet() {
-            grid-template-columns: 25% 25% 50%;
-        }
-
-        .widget {
-            h3 {}
-
-            p {
-                padding: 10px 0;
-            }
-        }
-
-        .examenes-contenedor {
-            // display: grid;
-            // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
-            .examenes {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                row-gap: 15px;
-
-                article {
-                    display: grid;
-                    align-items: center;
-                    column-gap: 15px;
-                    grid-template-columns: repeat(2, 1fr);
-                }
-            }
-        }
+    @include tablet() {
+      grid-template-columns: 25% 25% 1fr;
     }
 
+    .widget {
+      h3 {
+      }
+
+      p {
+        padding: 10px 0;
+      }
+    }
+
+    .examenes-contenedor {
+      // display: grid;
+      // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+      .examenes {
+        display: grid;
+        @include tablet() {
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+        row-gap: 15px;
+
+        article {
+          display: grid;
+          align-items: center;
+          column-gap: 15px;
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
 }

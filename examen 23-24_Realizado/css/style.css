@@ -9,7 +9,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "Gothic A1", sans-serif;
 }
 
@@ -25,24 +26,44 @@ header {
   min-height: 24rem;
   background-size: cover;
   background-position: center center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 header .contenido {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 @media screen and (min-width: 762px) {
   header .contenido {
-    flex-grow: 1;
-    align-items: flex-start;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 @media screen and (min-width: 1024px) {
   header .contenido {
-    align-items: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
 }
 header .contenido .titulo {
@@ -59,14 +80,26 @@ nav {
   background-color: black;
 }
 nav .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 @media screen and (min-width: 762px) {
   nav .menu {
-    flex-direction: row;
-    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 nav .menu li {
@@ -104,51 +137,88 @@ nav .menu li ul {
 }
 
 .principal {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .principal .titulo {
-  align-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   margin: 15px 0;
   font-size: 2.8rem;
 }
 .principal .mainYaside {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column-reverse;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
 }
 @media screen and (min-width: 762px) {
   .principal .mainYaside {
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 .principal .mainYaside main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 @media screen and (min-width: 762px) {
   .principal .mainYaside main {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 .principal .mainYaside main article {
   background-color: #f2f2f2;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 10px;
 }
 @media screen and (min-width: 762px) {
   .principal .mainYaside main article {
-    box-shadow: 5px 5px 5px gray;
-    flex-basis: calc(50% - 16px);
+    -webkit-box-shadow: 5px 5px 5px gray;
+            box-shadow: 5px 5px 5px gray;
+    -ms-flex-preferred-size: calc(50% - 16px);
+        flex-basis: calc(50% - 16px);
   }
 }
 @media screen and (min-width: 1024px) {
   .principal .mainYaside main article {
-    flex-basis: calc(33.3333333333% - 16px);
+    -ms-flex-preferred-size: calc(33.3333333333% - 16px);
+        flex-basis: calc(33.3333333333% - 16px);
   }
 }
 .principal .mainYaside main article img {
@@ -172,18 +242,25 @@ nav .menu li ul {
   padding: 15px 10px;
   margin-top: 10px;
   margin-bottom: 10px;
-  box-shadow: 5px 5px 5px gray;
+  -webkit-box-shadow: 5px 5px 5px gray;
+          box-shadow: 5px 5px 5px gray;
   font-family: Oswald, sans-serif;
 }
 .principal .mainYaside aside {
   background-color: #f2f2f2;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 0 10px;
 }
 @media screen and (min-width: 762px) {
   .principal .mainYaside aside {
-    box-shadow: 5px 5px 5px gray;
+    -webkit-box-shadow: 5px 5px 5px gray;
+            box-shadow: 5px 5px 5px gray;
     background-color: #f2f2f2;
     margin-left: 16px;
   }
@@ -210,14 +287,16 @@ nav .menu li ul {
   margin: 15px 0;
 }
 .principal .boton2 {
-  align-self: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   text-decoration: none;
   background-color: #536DFE;
   color: white;
   padding: 15px 10px;
   margin-top: 10px;
   margin-bottom: 10px;
-  box-shadow: 5px 5px 5px gray;
+  -webkit-box-shadow: 5px 5px 5px gray;
+          box-shadow: 5px 5px 5px gray;
   font-family: Oswald, sans-serif;
 }
 
@@ -230,25 +309,47 @@ footer {
   margin-top: 3rem;
   padding: 2rem 0;
   min-height: 20rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 footer .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 @media screen and (min-width: 762px) {
   footer .footer {
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 @media screen and (min-width: 1024px) {
   footer .footer {
-    justify-content: left;
-    align-items: center;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 footer .footer .widget {
@@ -256,7 +357,8 @@ footer .footer .widget {
 }
 @media screen and (min-width: 762px) {
   footer .footer .widget {
-    flex-basis: 25%;
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
   }
 }
 footer .footer .widget h3 {

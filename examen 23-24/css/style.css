@@ -54,7 +54,9 @@ header {
   background-size: cover;
   background-position: center center;
   display: grid;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 header .contenido {
   display: grid;
@@ -96,9 +98,9 @@ nav .menu {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     text-align: unset;
     /*
-    * HACER ESTO EN CASO DE QUE SE PIDA DOLO DOS HIJOS EN NAV GRID,
-    * UN LADO A UNO OTRO LADO A OTRO 
-    */
+          * HACER ESTO EN CASO DE QUE SE PIDA DOLO DOS HIJOS EN NAV GRID,
+          * UN LADO A UNO OTRO LADO A OTRO 
+          */
   }
 }
 nav .menu li {
@@ -132,8 +134,12 @@ nav .menu li a {
 }
 .principal .mainYaside {
   display: grid;
-  align-items: start;
-  column-gap: 25px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-column-gap: 25px;
+     -moz-column-gap: 25px;
+          column-gap: 25px;
 }
 @media screen and (min-width: 1024px) {
   .principal .mainYaside {
@@ -142,9 +148,13 @@ nav .menu li a {
 }
 .principal .mainYaside main {
   display: grid;
-  align-items: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   row-gap: 10px;
-  column-gap: 10px;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
 }
 @media screen and (min-width: 762px) {
   .principal .mainYaside main {
@@ -168,13 +178,16 @@ nav .menu li a {
 .principal .mainYaside main article {
   display: grid;
   background-color: aliceblue;
-  box-shadow: 5px 5px 5px gray;
+  -webkit-box-shadow: 5px 5px 5px gray;
+          box-shadow: 5px 5px 5px gray;
 }
 .principal .mainYaside main article div {
   padding: 15px;
   display: grid;
   justify-items: center;
-  align-items: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
 }
 .principal .mainYaside main article div h3 {
   padding: 15px 0;
@@ -190,11 +203,14 @@ nav .menu li a {
   background-color: #455A64;
 }
 .principal .mainYaside main article div .boton:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   background-color: #536DFE;
 }
 .principal .mainYaside aside {
   background-color: aliceblue;
-  box-shadow: 5px 5px 5px gray;
+  -webkit-box-shadow: 5px 5px 5px gray;
+          box-shadow: 5px 5px 5px gray;
   grid-row: 1/2;
   display: grid;
 }
@@ -243,7 +259,7 @@ footer .footer {
 }
 @media screen and (min-width: 762px) {
   footer .footer {
-    grid-template-columns: 25% 25% 50%;
+    grid-template-columns: 25% 25% 1fr;
   }
 }
 footer .footer .widget p {
@@ -251,12 +267,20 @@ footer .footer .widget p {
 }
 footer .footer .examenes-contenedor .examenes {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   row-gap: 15px;
+}
+@media screen and (min-width: 762px) {
+  footer .footer .examenes-contenedor .examenes {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
 }
 footer .footer .examenes-contenedor .examenes article {
   display: grid;
-  align-items: center;
-  column-gap: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px;
   grid-template-columns: repeat(2, 1fr);
 }/*# sourceMappingURL=style.css.map */
